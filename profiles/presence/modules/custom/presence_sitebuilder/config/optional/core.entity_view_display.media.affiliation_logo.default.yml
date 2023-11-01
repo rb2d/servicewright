@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.affiliation_logo.field_media_image
+    - image.style.affiliation_logos
+    - media.type.affiliation_logo
+  module:
+    - image
+id: media.affiliation_logo.default
+targetEntityType: media
+bundle: affiliation_logo
+mode: default
+content:
+  field_media_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: affiliation_logos
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

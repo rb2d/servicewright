@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file runs installation hooks.
+ */
+
+/**
+ * v1.0.12 - updated allowed formats.
+ */
+
+function presence_location_update_8002() {
+
+  // Import feature code.
+  $feature_list = [
+    'presence_location'
+  ];
+  // See: Drupal [#3017765].
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+
+  \Drupal::service('features.manager')->import($feature_list);
+}

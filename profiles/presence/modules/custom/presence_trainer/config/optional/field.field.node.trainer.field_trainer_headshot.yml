@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_trainer_headshot
+    - media.type.trainer_headshot
+    - node.type.trainer
+id: node.trainer.field_trainer_headshot
+field_name: field_trainer_headshot
+entity_type: node
+bundle: trainer
+label: 'Trainer Headshot'
+description: "This is a headshot image for the Trainer or coach on your team.   \r\nThis image should be high resolution and will be rejected if it is too small:  \r\n<ol>\r\n<li>Minimum image resolution requirements ( X x Y) </li>\r\n<li>Maximum image resolution requirements (X x Y</li>\r\n<ol>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      trainer_headshot: trainer_headshot
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

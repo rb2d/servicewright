@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_medium768_700
+label: 'Hero Image ( medium )'
+effects:
+  40da6eef-4c68-481d-add6-b4ce1285d137:
+    uuid: 40da6eef-4c68-481d-add6-b4ce1285d137
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 768
+      height: 700
+      anchor: center-center

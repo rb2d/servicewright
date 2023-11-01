@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.triib_calendar
+    - field.field.block_content.triib_calendar.field_triib_schedule_link
+id: block_content.triib_calendar.default
+targetEntityType: block_content
+bundle: triib_calendar
+mode: default
+content:
+  field_triib_schedule_link:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

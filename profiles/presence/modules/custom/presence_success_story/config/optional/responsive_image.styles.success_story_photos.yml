@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.no_crop_large
+    - image.style.no_crop_small
+  theme:
+    - limber
+id: success_story_photos
+label: 'Success story photos'
+image_style_mappings:
+  -
+    breakpoint_id: limber.xxxlarge
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: no_crop_large
+  -
+    breakpoint_id: limber.xxxlarge
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: no_crop_large
+  -
+    breakpoint_id: limber.xxlarge
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: no_crop_large
+  -
+    breakpoint_id: limber.xxlarge
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: no_crop_large
+  -
+    breakpoint_id: limber.xlarge
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: no_crop_large
+  -
+    breakpoint_id: limber.xlarge
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: no_crop_large
+  -
+    breakpoint_id: limber.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: no_crop_large
+  -
+    breakpoint_id: limber.large
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: no_crop_large
+  -
+    breakpoint_id: limber.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: no_crop_small
+  -
+    breakpoint_id: limber.medium
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: no_crop_small
+  -
+    breakpoint_id: limber.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: no_crop_small
+  -
+    breakpoint_id: limber.small
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: no_crop_small
+breakpoint_group: limber
+fallback_image_style: no_crop_small

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: acuity_scheduler
+label: 'Integration - Acuity Scheduler'
+revision: 0
+description: 'Block type to place Acuity Scheduler in layout builder.'

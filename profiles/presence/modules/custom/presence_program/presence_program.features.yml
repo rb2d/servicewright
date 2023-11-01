@@ -1,0 +1,14 @@
+bundle: presence
+required:
+  - core.entity_form_display.media.hero_image.default
+  - core.entity_form_display.pricing.pricing.default
+  - core.entity_view_display.media.hero_image.default
+  - core.entity_view_display.pricing.pricing.default
+  - field.field.media.hero_image.field_media_image
+  - field.field.pricing.pricing.field_cta_button
+  - field.field.pricing.pricing.field_features
+  - field.field.pricing.pricing.field_price
+  - field.storage.pricing.field_cta_button
+  - field.storage.pricing.field_features
+  - field.storage.pricing.field_price
+  - entityqueue.entity_queue.pricing

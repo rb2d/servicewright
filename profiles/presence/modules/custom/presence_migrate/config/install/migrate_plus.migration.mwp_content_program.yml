@@ -1,0 +1,126 @@
+langcode: en
+status: true
+dependencies: {  }
+id: mwp_content_program
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - WordPress
+migration_group: mwp
+label: 'Import programs from WordPress XML'
+source:
+  plugin: url
+  data_fetcher_plugin: http
+  data_parser_plugin: xml
+  item_selector: '/rss/channel/item[wp:post_type="services"]'
+  fields:
+    -
+      name: title
+      label: 'Content title'
+      selector: title
+    -
+      name: link
+      label: 'Content Link'
+      selector: link
+    -
+      name: post_id
+      label: 'Unique content ID'
+      selector: 'wp:post_id'
+    -
+      name: content
+      label: 'Body of the content'
+      selector: 'content:encoded'
+    -
+      name: excerpt
+      label: 'Excerpt of the content'
+      selector: 'excerpt:encoded'
+    -
+      name: pubDate
+      label: 'Publish date of the content'
+      selector: pubDate
+    -
+      name: post_date
+      label: 'Post date of the content'
+      selector: 'wp:post_date'
+    -
+      name: status
+      label: 'Published status of the content'
+      selector: 'wp:status'
+    -
+      name: creator
+      label: 'Username of the content creator'
+      selector: 'dc:creator'
+    -
+      name: service_pricing
+      label: 'Pricing for program'
+      selector: 'wp:postmeta[wp:meta_key=''_service_pricing'']/wp:meta_value'
+    -
+      name: thumbnail_id
+      label: 'Thumbnail assigned to the content item'
+      selector: 'wp:postmeta[wp:meta_key=''_thumbnail_id'']/wp:meta_value'
+  ids:
+    post_id:
+      type: integer
+process:
+  title:
+    -
+      plugin: get
+      source: title
+  path:
+    -
+      plugin: process_wplink
+      source: link
+  body/value:
+    -
+      plugin: process_body
+      source: content
+  body/summary:
+    -
+      plugin: get
+      source: excerpt
+  created:
+    -
+      plugin: callback
+      source: post_date
+      callable: strtotime
+  changed:
+    -
+      plugin: get
+      source: '@created'
+  status:
+    -
+      plugin: static_map
+      source: status
+      default_value: 1
+      map:
+        publish: 1
+        draft: 0
+  field_program_image_hero:
+    -
+      plugin: migration_lookup
+      migration: mwp_attachments
+      no_stub: true
+      source: thumbnail_id
+    -
+      plugin: image_file
+  field_pricing_group:
+    -
+      plugin: process_wp_pricing
+      source: service_pricing
+  uid:
+    plugin: migration
+    migration: mwp_authors
+    source: creator
+  body/format:
+    plugin: default_value
+    default_value: full_html
+  type:
+    plugin: default_value
+    default_value: program
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - mwp_authors
+    - mwp_attachments

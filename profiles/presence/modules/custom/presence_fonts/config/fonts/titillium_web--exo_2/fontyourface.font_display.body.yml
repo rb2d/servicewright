@@ -1,0 +1,10 @@
+uuid: 0859944f-fd3d-4e7d-8f54-5354247043c6
+langcode: en
+status: true
+dependencies: {  }
+id: body
+label: body
+font_url: 'https://www.google.com/webfonts/family?family=Exo 2&subset=latin#regular'
+fallback: ''
+selectors: '.fontyourface section p, .fontyourface section div'
+theme: limber

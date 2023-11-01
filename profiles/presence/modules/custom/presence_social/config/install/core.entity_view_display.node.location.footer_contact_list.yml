@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.footer_contact_list
+    - field.field.node.location.field_address
+    - field.field.node.location.field_description
+    - field.field.node.location.field_facility_gallery
+    - field.field.node.location.field_facility_phone
+    - field.field.node.location.field_geo_location
+    - field.field.node.location.field_social_links_groups
+    - node.type.location
+  module:
+    - address
+    - geolocation
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    sections: {  }
+    allow_custom: false
+    enabled: false
+id: node.location.footer_contact_list
+targetEntityType: node
+bundle: location
+mode: footer_contact_list
+content:
+  field_address:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_geo_location:
+    type: geolocation_latlng
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_description: true
+  field_facility_gallery: true
+  field_facility_phone: true
+  field_social_links_groups: true
+  langcode: true
+  links: true

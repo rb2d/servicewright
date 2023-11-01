@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.app_palestre
+    - field.storage.block_content.field_ext_apppalestre
+id: block_content.app_palestre.field_ext_apppalestre
+field_name: field_ext_apppalestre
+entity_type: block_content
+bundle: app_palestre
+label: 'Schedule link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

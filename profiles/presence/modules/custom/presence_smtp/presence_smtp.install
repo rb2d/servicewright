@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file - smtp default settings.
+ */
+
+/**
+ * OPS-72 - App password update.
+ */
+
+function presence_smtp_update_8001() {
+
+  // Import feature code.
+  $feature_list = [
+    'presence_smtp',
+  ];
+  // See: Drupal [#3017765].
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+
+  \Drupal::service('features.manager')->import($feature_list);
+}

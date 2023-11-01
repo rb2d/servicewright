@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mindbody_calendar
+    - field.storage.block_content.field_ext_mindbody_cal
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    mindbody_script: mindbody_script
+    activecampaign_script: '0'
+    acuity_scheduler_script: '0'
+    basic_html: '0'
+    cta_textarea: '0'
+    infusionsoft_filter: '0'
+    ontraport_script: '0'
+    restricted_html: '0'
+    uplaunch_script: '0'
+    full_html: '0'
+    plain_text: '0'
+id: block_content.mindbody_calendar.field_ext_mindbody_cal
+field_name: field_ext_mindbody_cal
+entity_type: block_content
+bundle: mindbody_calendar
+label: 'MindBody Calendar code'
+description: "Please paste your MindBody Calendar code here. \r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

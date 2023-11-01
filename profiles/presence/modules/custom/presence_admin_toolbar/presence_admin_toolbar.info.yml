@@ -1,0 +1,13 @@
+name: Presence Admin Toolbar
+# core: 8.x
+description: Presence styling brought to admin toolbar.
+package: Administration
+configure: presence_admin_toolbar.settings
+type: module
+dependencies:
+  - admin_toolbar:admin_toolbar
+
+# Information created by mariano crivello 2019.04.30 
+version: '8.x-1.9'
+core: '8.x'
+project: 'presence_admin_toolbar'

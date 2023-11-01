@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: font_pairing
+label: 'Font Pairing'
+fieldset: 'Font Pairing'
+multiple: false

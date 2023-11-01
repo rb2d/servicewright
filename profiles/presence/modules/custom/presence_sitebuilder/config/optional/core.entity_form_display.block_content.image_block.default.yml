@@ -1,0 +1,309 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_block
+    - field.field.block_content.image_block.field_background_image
+    - field.field.block_content.image_block.field_cta_button
+    - field.field.block_content.image_block.field_cta_button_alignment
+    - field.field.block_content.image_block.field_cta_button_color
+    - field.field.block_content.image_block.field_cta_button_size
+    - field.field.block_content.image_block.field_cta_button_style
+    - field.field.block_content.image_block.field_image_block_tagline
+    - field.field.block_content.image_block.field_image_block_tagline_size
+    - field.field.block_content.image_block.field_image_overlay_color
+    - field.field.block_content.image_block.field_image_overlay_gradient
+    - field.field.block_content.image_block.field_overlay_type
+    - field.field.block_content.image_block.field_tagline_alignment
+    - field.field.block_content.image_block.field_text_color
+  module:
+    - field_group
+    - field_layout
+    - layout_discovery
+    - link_attributes
+    - media_library
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+  field_group:
+    group_media:
+      children:
+        - group_background_image
+        - group_overlay_filter_options
+      parent_name: group_media_group
+      weight: 6
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: media
+      region: content
+    group_background_image:
+      children:
+        - field_background_image
+      parent_name: group_media
+      weight: 20
+      format_type: tab
+      format_settings:
+        description: ''
+        formatter: closed
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'background image'
+      region: content
+    group_overlay_filter_options:
+      children:
+        - field_overlay_type
+        - field_image_overlay_gradient
+        - field_image_overlay_color
+      parent_name: group_media
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'overlay filter options'
+      region: content
+    group_button_and_text_settings:
+      children:
+        - group_cta_button_settings
+      parent_name: group_button
+      weight: 7
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'button and text settings'
+      region: content
+    group_cta_button_settings:
+      children:
+        - field_cta_button
+        - field_cta_button_style
+        - field_cta_button_size
+        - field_cta_button_color
+        - field_cta_button_alignment
+      parent_name: group_button_and_text_settings
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'CTA button settings'
+      region: content
+    group_tagline:
+      children:
+        - group_tagline_text
+        - group_tagline_options
+      parent_name: group_text
+      weight: 2
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: tagline
+      region: content
+    group_tagline_text:
+      children:
+        - field_image_block_tagline
+      parent_name: group_tagline
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'tagline text'
+      region: content
+    group_tagline_options:
+      children:
+        - field_image_block_tagline_size
+        - field_tagline_alignment
+        - field_text_color
+      parent_name: group_tagline
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: 'tagline options'
+      region: content
+    group_options:
+      children:
+        - group_media_group
+        - group_text
+        - group_button
+      parent_name: ''
+      weight: 1
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: vertical
+      label: Options
+      region: content
+    group_media_group:
+      children:
+        - group_media
+      parent_name: group_options
+      weight: 20
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: media
+      region: content
+    group_text:
+      children:
+        - group_tagline
+      parent_name: group_options
+      weight: 21
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: text
+      region: content
+    group_button:
+      children:
+        - group_button_and_text_settings
+      parent_name: group_options
+      weight: 22
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        formatter: closed
+        required_fields: true
+      label: button
+      region: content
+id: block_content.image_block.default
+targetEntityType: block_content
+bundle: image_block
+mode: default
+content:
+  field_background_image:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  field_cta_button:
+    weight: 22
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      enabled_attributes:
+        target: true
+        id: false
+        name: false
+        rel: false
+        class: false
+        accesskey: false
+        aria-label: false
+        title: false
+    third_party_settings: {  }
+    type: link_attributes
+    region: content
+  field_cta_button_alignment:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cta_button_color:
+    weight: 25
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cta_button_size:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_cta_button_style:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image_block_tagline:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_image_block_tagline_size:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_image_overlay_color:
+    weight: 23
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_image_overlay_gradient:
+    weight: 22
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_overlay_type:
+    weight: 21
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_tagline_alignment:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_text_color:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

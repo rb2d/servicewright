@@ -1,0 +1,3 @@
+get_provider:
+  js:
+    js/get_provider.js: {}

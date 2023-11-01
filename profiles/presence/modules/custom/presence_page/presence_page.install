@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the presence_page module.
+ */
+
+/**
+ * v1.0.20 - update layout configurations.
+ */
+function presence_page_update_8003() {
+  // Import feature code.
+  $feature_list = [
+    'presence_page',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};

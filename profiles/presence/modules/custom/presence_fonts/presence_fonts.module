@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * Presence font configuration selector.
+ */
+
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\presence_fonts\ImportFonts;
+
+/**
+ * Implements hook_form_alter().
+ */
+function presence_fonts_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'site_setting_entity_font_pairing_edit_form' || $form_id == 'site_setting_entity_font_pairing_form') {
+    $form['actions']['submit']['#submit'][] = 'font_pairing_import';
+  }
+}
+
+/**
+ * Font options array.
+ */
+function font_pairing_options(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+  $options = [];
+  $options['montserrat--lato'] = 'Montserrat - Lato';
+  $options['muli--roboto'] = 'Muli - Roboto';
+  $options['nunito--nunito'] = 'Nunito - Nunito';
+  $options['oswald--noto_serif'] = 'Oswald - Noto Serif';
+  $options['poppins--pt_serif'] = 'Poppins - PT Serif';
+  $options['prompt--open_sans'] = 'Prompt - Open Sans';
+  $options['raleway--ubuntu'] = 'Raleway - Ubuntu';
+  $options['rubik--lora'] = 'Rubik - Lora';
+  $options['saira--saira'] = 'Saira - Saira';
+  $options['titillium_web--exo_2'] = 'Titillium web - Exo 2';
+  $options['source_sans_pro--source_serif_pro'] = 'Source sans pro - Source serif pro';
+  $options['work_sans--merriweather'] = 'Work sans - Merriweather';
+
+  return $options;
+}
+
+/**
+ * Generates font CSS files.
+ */
+function font_pairing_import($form, FormStateInterface $form_state) {
+  $font = $form_state->getValue('field_font')[0]['value'];
+  if (isset($font)) {
+    ImportFonts::importFont($font);
+  }
+}

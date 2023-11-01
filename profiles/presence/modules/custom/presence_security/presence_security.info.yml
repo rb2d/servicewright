@@ -1,0 +1,9 @@
+name: Security
+description: 'Bundles the security features'
+type: module
+core: 8.x
+dependencies:
+  - honeypot
+  - recaptcha
+package: Presence
+version: 8.x-1.0

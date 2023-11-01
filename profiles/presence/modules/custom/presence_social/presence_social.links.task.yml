@@ -1,0 +1,21 @@
+# Social link group routing definition
+social_link_group.settings_tab:
+  route_name: social_link_group.settings
+  title: 'Settings'
+  base_route: social_link_group.settings
+
+entity.social_link_group.canonical:
+  route_name: entity.social_link_group.canonical
+  base_route: entity.social_link_group.canonical
+  title: 'View'
+
+entity.social_link_group.edit_form:
+  route_name: entity.social_link_group.edit_form
+  base_route: entity.social_link_group.canonical
+  title: 'Edit'
+
+entity.social_link_group.delete_form:
+  route_name:  entity.social_link_group.delete_form
+  base_route:  entity.social_link_group.canonical
+  title: Delete
+  weight: 10

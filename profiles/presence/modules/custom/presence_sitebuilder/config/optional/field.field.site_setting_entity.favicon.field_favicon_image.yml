@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_favicon_image
+    - media.type.favicon
+    - site_settings.site_setting_entity_type.favicon
+id: site_setting_entity.favicon.field_favicon_image
+field_name: field_favicon_image
+entity_type: site_setting_entity
+bundle: favicon
+label: 'Favicon Image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      favicon: favicon
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: favicon
+field_type: entity_reference

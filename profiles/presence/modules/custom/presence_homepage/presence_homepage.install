@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file install hooks go here.
+ */
+
+/**
+ * v1.0.20 - update layout configurations.
+ */
+
+function presence_homepage_update_8001() {
+    // Import feature code.
+    $feature_list = [
+        'presence_homepage',
+    ];
+
+    $assigner = \Drupal::service('features_assigner');
+    $assigner->assignConfigPackages();
+    \Drupal::service('features.manager')->import($feature_list);
+
+}

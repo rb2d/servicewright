@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.activecampaign_form
+    - field.field.block_content.activecampaign_form.field_activecamp_form_code
+  module:
+    - text
+id: block_content.activecampaign_form.default
+targetEntityType: block_content
+bundle: activecampaign_form
+mode: default
+content:
+  field_activecamp_form_code:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

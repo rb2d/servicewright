@@ -1,0 +1,26 @@
+name: Presence Migrate
+description: 'Provides Migration related configs and plugins'
+type: module
+core: 8.x
+dependencies:
+  - entity_reference_revisions
+  - field
+  - field_layout
+  - layout_builder
+  - layout_discovery
+  - media_library
+  - migrate_drupal_ui
+  - migrate_plus
+  - migrate_source_csv
+  - migrate_tools
+  - node
+  - paragraphs
+  - path
+  - presence_blog
+  - site_settings
+  - text
+  - user
+  - wordpress_migrate
+  - wordpress_migrate_ui
+version: 8.x-1.0.19
+package: Presence

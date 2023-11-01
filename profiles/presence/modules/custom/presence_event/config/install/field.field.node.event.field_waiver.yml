@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_waiver
+    - node.type.event
+id: node.event.field_waiver
+field_name: field_waiver
+entity_type: node
+bundle: event
+label: 'Requires waiver'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

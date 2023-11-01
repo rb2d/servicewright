@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the presence installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function presence_install() {
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('node.settings')->set('use_admin_theme', 'true')->save();
+}
+
+
+/**
+ * v1.0.15-hotfix3 - use admin theme setting.
+ */
+
+ function presence_update_8001(){
+    presence_install();
+    
+ }

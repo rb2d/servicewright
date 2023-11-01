@@ -1,0 +1,107 @@
+<?php
+
+/**
+ * @file
+ * Manage install and update hooks.
+ */
+
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+
+/**
+ * Delete Exixting Blog Category Menus SWP-278.
+ */
+function presence_blog_update_8001() {
+  $query = \Drupal::entityQuery('menu_link_content')
+    ->condition('menu_name', 'main')
+    ->condition('parent', 'views_view:views.blog_list.page_1');
+  $menu_ids = $query->execute();
+  foreach ($menu_ids as $menu_id) {
+    $menu_link = MenuLinkContent::load($menu_id);
+    $menu_link->delete();
+  }
+}
+
+/**
+ * V0.0.9-RC9 - revert blog settings.
+ */
+function presence_blog_update_8002() {
+  $feature_list = [
+    'presence_blog',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V0.0.9-RC10 - revert blog settings.
+ */
+function presence_blog_update_8003() {
+  // Install module.
+  \Drupal::service('module_installer')->install(['layout_plugin_views'], TRUE);
+
+  // Import features setting.
+  $feature_list = [
+    'presence_blog',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V1.0.11 - update default blog view.
+ */
+function presence_blog_update_8008() {
+
+  // Import features setting.
+  $feature_list = [
+    'presence_blog',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V1.0.12 - Update Blog URLs.
+ */
+function presence_blog_update_8009() {
+  $action = 'all';
+  $types = ['canonical_entities:node'];
+  $batch = [
+    'title' => dt('Bulk updating URL aliases'),
+    'operations' => [
+      ['Drupal\pathauto\Form\PathautoBulkUpdateForm::batchStart', []],
+    ],
+    'finished' => 'Drupal\pathauto\Form\PathautoBulkUpdateForm::batchFinished',
+    'progressive' => FALSE,
+  ];
+
+  foreach ($types as $type) {
+    $batch['operations'][] = [
+      'Drupal\pathauto\Form\PathautoBulkUpdateForm::batchProcess',
+      [$type, $action],
+    ];
+  }
+
+  batch_set($batch);
+}
+
+/**
+ * V1.0.13 - D8.8 config defaults update.
+ */
+function presence_blog_update_8010() {
+
+  // Import features setting.
+  $feature_list = [
+    'presence_blog',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}

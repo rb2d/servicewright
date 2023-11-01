@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_banner
+    - field.storage.block_content.field_overlay_type
+  module:
+    - options
+id: block_content.hero_banner.field_overlay_type
+field_name: field_overlay_type
+entity_type: block_content
+bundle: hero_banner
+label: 'Overlay Type'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

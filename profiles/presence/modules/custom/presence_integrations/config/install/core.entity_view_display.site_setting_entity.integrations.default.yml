@@ -1,0 +1,124 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.integrations.field_enable_activecamp
+    - field.field.site_setting_entity.integrations.field_enable_acuity_scheduling
+    - field.field.site_setting_entity.integrations.field_enable_apppalestre_cal
+    - field.field.site_setting_entity.integrations.field_enable_infusionsoft_forms
+    - field.field.site_setting_entity.integrations.field_enable_mindbody_cal
+    - field.field.site_setting_entity.integrations.field_enable_ontraport
+    - field.field.site_setting_entity.integrations.field_enable_triib_calendar
+    - field.field.site_setting_entity.integrations.field_enable_uplaunch
+    - site_settings.site_setting_entity_type.integrations
+  module:
+    - user
+id: site_setting_entity.integrations.default
+targetEntityType: site_setting_entity
+bundle: integrations
+mode: default
+content:
+  field_enable_activecamp:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_enable_acuity_scheduling:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_enable_apppalestre_cal:
+    weight: 6
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_enable_infusionsoft_forms:
+    weight: 9
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_enable_mindbody_cal:
+    weight: 7
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_enable_ontraport:
+    weight: 1
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_enable_triib_calendar:
+    weight: 3
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_enable_uplaunch:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  fieldset:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  name:
+    label: above
+    type: string
+    weight: -4
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

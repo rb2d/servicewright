@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_xlarge1920_1079
+label: 'Hero Image ( xlarge )'
+effects:
+  91162ed3-7e9b-44bc-8ee4-a9da2528a0fd:
+    uuid: 91162ed3-7e9b-44bc-8ee4-a9da2528a0fd
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 1079
+      anchor: center-center

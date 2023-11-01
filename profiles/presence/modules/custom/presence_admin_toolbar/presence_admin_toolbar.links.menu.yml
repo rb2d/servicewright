@@ -1,0 +1,5 @@
+presence_admin_toolbar.settings:
+  title: 'Presence Admin Toolbar'
+  parent: system.admin_config_ui
+  description: 'Configure Presence Admin Toolbar.'
+  route_name: presence_admin_toolbar.settings

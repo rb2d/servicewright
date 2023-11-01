@@ -1,0 +1,60 @@
+add program schedule entities:
+  title: 'Create new Program schedule entities'
+
+administer program schedule entities:
+  title: 'Administer Program schedule entities'
+  description: 'Allow to access the administration form to configure Program schedule entities.'
+  restrict access: true
+
+delete program schedule entities:
+  title: 'Delete Program schedule entities'
+
+edit program schedule entities:
+  title: 'Edit Program schedule entities'
+
+view published program schedule entities:
+  title: 'View published Program schedule entities'
+
+view unpublished program schedule entities:
+  title: 'View unpublished Program schedule entities'
+
+view all program schedule revisions:
+  title: 'View all Program schedule revisions'
+
+revert all program schedule revisions:
+  title: 'Revert all Program schedule revisions'
+  description: 'Role requires permission <em>view Program schedule revisions</em> and <em>edit rights</em> for program schedule entities in question or <em>administer program schedule entities</em>.'
+
+delete all program schedule revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Program schedule revisions</em> and <em>delete rights</em> for program schedule entities in question or <em>administer program schedule entities</em>.'
+add pricing entities:
+  title: 'Create new Pricing entities'
+
+administer pricing entities:
+  title: 'Administer Pricing entities'
+  description: 'Allow to access the administration form to configure Pricing entities.'
+  restrict access: true
+
+delete pricing entities:
+  title: 'Delete Pricing entities'
+
+edit pricing entities:
+  title: 'Edit Pricing entities'
+
+view published pricing entities:
+  title: 'View published Pricing entities'
+
+view unpublished pricing entities:
+  title: 'View unpublished Pricing entities'
+
+view all pricing revisions:
+  title: 'View all Pricing revisions'
+
+revert all pricing revisions:
+  title: 'Revert all Pricing revisions'
+  description: 'Role requires permission <em>view Pricing revisions</em> and <em>edit rights</em> for pricing entities in question or <em>administer pricing entities</em>.'
+
+delete all pricing revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Pricing revisions</em> and <em>delete rights</em> for pricing entities in question or <em>administer pricing entities</em>.'

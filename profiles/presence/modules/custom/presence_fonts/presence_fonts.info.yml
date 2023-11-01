@@ -1,0 +1,16 @@
+name: 'Presence Fonts'
+description: 'The default font pairing / configuration module.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - field_layout
+  - fontyourface
+  - layout_discovery
+  - options
+  - presence_sitebuilder
+  - site_settings
+  - user
+version: 8.x-1.0.13
+package: Presence
+core_incompatible: false

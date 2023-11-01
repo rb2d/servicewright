@@ -1,0 +1,6 @@
+presence_core.site_setting:
+  title: Site Settings
+  description: 'Add and modify shortcut sets.'
+  route_name: entity.site_setting_entity.collection
+  parent: system.admin
+  weight: -4

@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * - installs performance settings.
+ */
+
+/**
+ * Install default configuration.
+ */
+function presence_performance_install() {
+
+  /**
+   * Install schema in config/default/ system.performance.yml.
+   * Because this is an ignored configuration by features module when per site
+   * settings is disabled.
+   */
+
+  Drupal::service('presence_performance.default')->import();
+
+}
+
+/**
+ * V1.0.15 - Performance configuration import.
+ */
+function presence_performance_update_8001() {
+
+  // Update cache lifetime to 1 day.
+  Drupal::service('presence_performance.default')->import();
+
+}
+
+/**
+ * V1.0.17 - Disable SCSS Cache by default.
+ */
+function presence_performance_update_8004() {
+
+    // Import feature code.
+    $feature_list = [
+        'presence_performance',
+    ];
+    // See: Drupal [#3017765].
+    $assigner = Drupal::service('features_assigner');
+    $assigner->assignConfigPackages();
+
+    Drupal::service('features.manager')->import($feature_list);
+}

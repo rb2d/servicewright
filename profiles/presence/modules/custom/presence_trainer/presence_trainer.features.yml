@@ -1,0 +1,9 @@
+bundle: presence
+required:
+  - site_settings.config
+  - core.entity_form_display.site_setting_entity.trainers_view_mode.default
+  - core.entity_view_display.site_setting_entity.trainers_view_mode.default
+  - field.field.site_setting_entity.trainers_view_mode.field_select_view_mode
+  - field.storage.site_setting_entity.field_select_view_mode
+  - site_settings.site_setting_entity_type.trainers_view_mode
+  - entityqueue.entity_queue.trainers

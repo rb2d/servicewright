@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: affiliation_logos
+label: 'Affiliation Logos 280 X 80'
+effects:
+  0e98737a-eb23-4803-a1e8-d987de76bf5a:
+    uuid: 0e98737a-eb23-4803-a1e8-d987de76bf5a
+    id: image_scale
+    weight: 1
+    data:
+      width: 280
+      height: 80
+      upscale: false

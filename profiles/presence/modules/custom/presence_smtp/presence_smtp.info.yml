@@ -1,0 +1,9 @@
+name: 'Presence SMTP'
+description: 'Default SMTP configuration'
+type: module
+core: 8.x
+dependencies:
+  - smtp
+  - system
+version: 8.x-1.0.15
+package: Presence

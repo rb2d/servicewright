@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_trainer_video
+    - media.type.remote_video
+    - node.type.trainer
+id: node.trainer.field_trainer_video
+field_name: field_trainer_video
+entity_type: node
+bundle: trainer
+label: 'Trainer video'
+description: "Add a \"remote\" video from Vimeo or Youtube here.  \r\nThis is good place to highlight a trainer in action.  \r\nNote: it should not be much longer than a minute, think \"TV Commercial\" "
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      remote_video: remote_video
+    sort:
+      field: status
+      direction: DESC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

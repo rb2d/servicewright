@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.trainer_headshot.field_media_image
+    - image.style.medium
+    - media.type.trainer_headshot
+  module:
+    - image
+id: media.trainer_headshot.media_library
+targetEntityType: media
+bundle: trainer_headshot
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_image: true
+  langcode: true
+  name: true
+  uid: true

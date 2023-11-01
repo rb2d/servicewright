@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ext_is_form_block
+label: 'Integration - InfusionSoft Forms'
+revision: 0
+description: 'Block type to place InfusionSoft Forms in layout builder.'

@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Install and update for the presence_user module.
+ */
+
+/**
+ * Fixes paragraphs permissions. SWP-348.
+ */
+function presence_user_update_8001() {
+
+  $feature_list = [
+    'presence_user',
+    'presence_program',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * Installs role_delegation module.
+ */
+function presence_user_update_8002() {
+  \Drupal::service('module_installer')->install(['role_delegation'], TRUE);
+}
+
+
+/**
+ * V1.0.19 - Fix IS form permissions.
+ */
+function presence_user_update_8016() {
+
+  $feature_list = [
+    'presence_user',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.background_image.field_media_image
+    - media.type.background_image
+  module:
+    - image
+id: media.background_image.default
+targetEntityType: media
+bundle: background_image
+mode: default
+content:
+  field_media_image:
+    type: image_url
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  name: true
+  thumbnail: true
+  uid: true

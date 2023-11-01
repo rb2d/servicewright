@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.remote_video
+id: block_content.remote_video
+target_entity_type_id: block_content
+target_bundle: remote_video
+default_langcode: site_default
+language_alterable: false

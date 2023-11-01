@@ -1,0 +1,23 @@
+bundle: presence
+required:
+  - webform.webform.contact_us
+  - webform.webform.contact_us_afis
+  - webform.webform.contact_us_naf
+  - webform.webform.drop_in_visitor_form
+  - webform.webform.drop_in_visitor_form_afis
+  - webform.webform.drop_in_visitor_form_naf
+  - webform.webform.ebook_download_form
+  - webform.webform.education_series_form
+  - webform.webform.get_started_form
+  - webform.webform.get_started_form_afis
+  - webform.webform.get_started_form_naf
+  - webform.webform.membership_cancellation_request_
+  - webform.webform.membership_hold_form
+  - webform.webform.membership_hold_form_afis
+  - webform.webform.membership_hold_form_naf
+  - webform.webform.member_cancellation_request_afis
+  - webform.webform.member_cancellation_request_naf
+  - webform.webform.personal_training_opt_in_form
+  - webform.webform.refer_a_friend
+  - webform.webform.refer_a_friend_afis
+  - webform.webform.refer_a_friend_naf

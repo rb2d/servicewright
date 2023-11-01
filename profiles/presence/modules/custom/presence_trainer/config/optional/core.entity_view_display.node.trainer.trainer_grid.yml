@@ -1,0 +1,81 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.trainer_grid
+    - field.field.node.trainer.field_biography
+    - field.field.node.trainer.field_certifications
+    - field.field.node.trainer.field_facility_title
+    - field.field.node.trainer.field_personal_links
+    - field.field.node.trainer.field_trainer_headshot
+    - field.field.node.trainer.field_trainer_video
+    - field.field.node.trainer.field_weight
+    - image.style.large
+    - node.type.trainer
+  module:
+    - layout_builder
+    - link
+    - media
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+    sections: {  }
+id: node.trainer.trainer_grid
+targetEntityType: node
+bundle: trainer
+mode: trainer_grid
+content:
+  field_biography:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_facility_title:
+    type: string
+    weight: 1
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_personal_links:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_trainer_headshot:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_trainer_video:
+    type: entity_reference_entity_view
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_certifications: true
+  field_weight: true
+  langcode: true
+  layout_builder__layout: true
+  links: true

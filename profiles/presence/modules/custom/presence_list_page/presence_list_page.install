@@ -1,0 +1,16 @@
+<?php
+/**
+ * V1.0.20 - import layouts swp-xy-grid-12 defaults.
+ */
+function presence_list_page_update_8003(){
+
+    // Import features setting.
+    $feature_list = [
+      'presence_list_page',
+    ];
+
+    $assigner = \Drupal::service('features_assigner');
+    $assigner->assignConfigPackages();
+    \Drupal::service('features.manager')->import($feature_list);
+
+}

@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the presence_trainer module.
+ */
+
+/**
+ * V0.0.9-RC9 - import default trainer settings.
+ */
+function presence_trainer_update_8001() {
+  $feature_list = [
+    'presence_trainer',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};
+
+/**
+ * V1.0.12 - updated allowed formats
+ */
+function presence_trainer_update_8003() {
+  $feature_list = [
+    'presence_trainer',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};

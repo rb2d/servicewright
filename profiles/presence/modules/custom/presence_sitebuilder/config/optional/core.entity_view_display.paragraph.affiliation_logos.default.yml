@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.affiliation_logos.field_logo
+    - field.field.paragraph.affiliation_logos.field_logo_link
+    - paragraphs.paragraphs_type.affiliation_logos
+  module:
+    - link
+id: paragraph.affiliation_logos.default
+targetEntityType: paragraph
+bundle: affiliation_logos
+mode: default
+content:
+  field_logo:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_logo_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden: {  }

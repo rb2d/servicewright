@@ -1,0 +1,167 @@
+#edit-field-gradient-wrapper #edit-field-gradient {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+}
+
+#edit-field-gradient-wrapper .form-item,
+div[id^='edit-settings-block-form-field-gradient-wrapper--'] .form-item {
+  margin-right: 10px;
+}
+
+#edit-field-gradient-wrapper .form-item label,
+div[id^='edit-settings-block-form-field-gradient-wrapper--'] .form-item label,
+.js-form-item-settings-block-form-field-gradient label {
+  font-size: 0 !important;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+#edit-field-gradient-wrapper .form-item input:checked+label,
+div[id^='edit-settings-block-form-field-gradient-wrapper--'] .form-item input:checked+label,
+.js-form-item-settings-block-form-field-gradient input:checked+label {
+  position: relative;
+}
+
+#edit-field-gradient-wrapper .form-item input:checked+label::before,
+div[id^='edit-settings-block-form-field-gradient-wrapper--'] .form-item input:checked+label::before,
+.js-form-item-settings-block-form-field-gradient input:checked+label::before {
+  content: "";
+  background: url(../images/check-solid.svg) center no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 20px;
+}
+
+.js-form-item-settings-block-form-field-gradient input:checked+label::before {
+  border: 1px solid #fff;
+}
+
+#edit-field-gradient-wrapper .form-item input,
+div[id^='edit-settings-block-form-field-gradient-wrapper--'] .form-item input,
+div[id^='edit-settings-block-form-field-gradient--'] .form-item input {
+  display: none;
+}
+
+input[value='overlay-grad-blk-op25-toright']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.25;
+}
+
+input[value='overlay-grad-blk-op50-toright']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.5;
+}
+
+input[value='overlay-grad-blk-op75-toright']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.75;
+}
+
+input[value='overlay-grad-blk-op25-toleft']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.25;
+}
+
+input[value='overlay-grad-blk-op50-toleft']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.5;
+}
+
+input[value='overlay-grad-blk-op75-toleft']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.75;
+}
+
+input[value='overlay-grad-blk-op25-tobottom']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.25;
+}
+
+input[value='overlay-grad-blk-op50-tobottom']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.5;
+}
+
+input[value='overlay-grad-blk-op75-tobottom']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.75;
+}
+
+input[value='overlay-grad-blk-op25-totop']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.25;
+}
+
+input[value='overlay-grad-blk-op50-totop']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.5;
+}
+
+input[value='overlay-grad-blk-op75-totop']+label {
+  background-image: linear-gradient(to right, #365073, #000000) !important;
+  opacity: 0.75;
+}
+
+input[value='overlay-grad-wht-op25-toright']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.25;
+}
+
+input[value='overlay-grad-wht-op50-toright']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.5;
+}
+
+input[value='overlay-grad-wht-op75-toright']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.75;
+}
+
+input[value='overlay-grad-wht-op25-toleft']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.25;
+}
+
+input[value='overlay-grad-wht-op50-toleft']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.5;
+}
+
+input[value='overlay-grad-wht-op75-toleft']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.75;
+}
+
+input[value='overlay-grad-wht-op25-tobottom']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.25;
+}
+
+input[value='overlay-grad-wht-op50-tobottom']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.5;
+}
+
+input[value='overlay-grad-wht-op75-tobottom']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.75;
+}
+
+input[value='overlay-grad-wht-op25-totop']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.25;
+}
+
+input[value='overlay-grad-wht-op50-totop']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.5;
+}
+
+input[value='overlay-grad-wht-op75-totop']+label {
+  background-image: linear-gradient(to right, #365073, #ffffff) !important;
+  opacity: 0.75;
+}

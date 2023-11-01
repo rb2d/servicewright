@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facility_title
+    - node.type.trainer
+id: node.trainer.field_facility_title
+field_name: field_facility_title
+entity_type: node
+bundle: trainer
+label: 'Facility title'
+description: 'Enter in this person’s title at your facility, eg. Coach or Trainer, Owner, etc.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,423 @@
+.presence-admin-toolbar .toolbar a {
+  transition: all, 0.2s;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-bar {
+  box-shadow: none;
+  background-color: #2d2d2d;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-menu {
+  background: #333;
+}
+
+.presence-admin-toolbar .toolbar-tray .toolbar-menu a,
+.presence-admin-toolbar .toolbar-tray .toolbar-menu span {
+  background: transparent;
+  color: #ccc;
+}
+
+.presence-admin-toolbar .toolbar-tray .toolbar-menu li {
+  background: #333;
+}
+
+.presence-admin-toolbar .toolbar-tray ul li.menu-item {
+  border: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-horizontal ul ul li.menu-item:first-child {
+  border: none;
+}
+
+.presence-admin-toolbar .toolbar-oriented .user-toolbar-tab {
+  float: right;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-vertical {
+  border: none;
+  box-shadow: none;
+}
+
+.presence-admin-toolbar .toolbar-tray a,
+.presence-admin-toolbar .toolbar-tray span {
+  background: #2d2d2d;
+  color: #bbb;
+}
+
+.presence-admin-toolbar .toolbar-tray span {
+  display: block;
+  padding: 1em 1.3333em;
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal a:hover,
+.presence-admin-toolbar .toolbar-tray-horizontal a:active,
+.presence-admin-toolbar .toolbar-tray-horizontal a:focus {
+  background: #0084d7;
+  color: #fff;
+  text-decoration: none;
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover > a,
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover > .toolbar-box > a {
+  background: #0084d7;
+  color: #fff !important;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-bar .toolbar-tab > .toolbar-item {
+  font-weight: 600;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-bar .toolbar-item {
+  color: #bebebe;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-bar .toolbar-tab > .toolbar-item:hover {
+  background-image: none;
+  background-color: #2d2d2d;
+  color: #fff;
+  text-decoration: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-bar .toolbar-tab > .toolbar-item.is-active,
+.presence-admin-toolbar .toolbar .toolbar-bar .toolbar-tab > .toolbar-item:focus {
+  background-image: none;
+  background-color: #333;
+  text-decoration: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-horizontal .menu-item + .menu-item,
+[dir="rtl"] .presence-admin-toolbar .toolbar .toolbar-tray-horizontal .menu-item + .menu-item,
+.presence-admin-toolbar .toolbar .toolbar-tray-horizontal .menu-item:last-child {
+  border-left: none; /* LTR */
+  border-right: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray .menu-item--active-trail > .toolbar-box a,
+.presence-admin-toolbar .toolbar .toolbar-tray a.is-active {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-vertical .menu-item + .menu-item {
+  border: 0 none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray {
+  background-color: #333;
+  box-shadow: -2px 2px 12px rgba(0,0,0,0.85);
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-horizontal {
+  border-bottom: 1px solid #333;
+  box-shadow: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-toggle-orientation {
+  background-color: #333;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-icon.toolbar-handle:focus {
+  background-color: transparent;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-icon.toolbar-handle:before {
+  background-image: url(../images/acacac/chevron-outline-disc-down.svg);
+  transition: .25s;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-icon.toolbar-handle.open:before {
+  background-image: url(../images/ffcfcf/chevron-outline-disc-close.svg) !important;
+  transform: rotate(180deg);
+}
+
+.presence-admin-toolbar .toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle:before {
+  background-image: url(../images/acacac/chevron-outline-disc-down.svg);
+  background-size: 100%;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-icon.toolbar-handle:hover:before,
+.presence-admin-toolbar .toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle:hover:before,
+.presence-admin-toolbar .toolbar .toolbar-menu .toolbar-box:hover .toolbar-icon.toolbar-handle:before {
+  background-image: url(../images/ffffff/chevron-outline-disc-down.svg);
+}
+
+.presence-admin-toolbar .toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle.open:before,
+.presence-admin-toolbar .toolbar .toolbar-menu .toolbar-box:hover .toolbar-icon.toolbar-handle.open:before {
+  background-image: url(../images/ffffff/chevron-outline-disc-close.svg);
+  background-size: 100%;
+}
+
+.presence-admin-toolbar .level-1 .toolbar-handle.open,
+.presence-admin-toolbar .toolbar-tray-vertical .level-2 {
+  background: #3b3b3b !important;
+}
+
+.presence-admin-toolbar .level-2 .toolbar-handle.open,
+.presence-admin-toolbar .toolbar-tray-vertical .level-3 {
+  background: #434343 !important;
+}
+
+.presence-admin-toolbar .level-3 .toolbar-handle.open,
+.presence-admin-toolbar .toolbar-tray-vertical .level-4 {
+  background: #4c4c4c !important;
+}
+
+.presence-admin-toolbar .level-4 .toolbar-handle.open,
+.presence-admin-toolbar .toolbar-tray-vertical .level-5 {
+  background: #545454 !important;
+}
+
+/* For WCAG, we are lightening the text on this tier. */
+.presence-admin-toolbar .toolbar .level-3 a,
+.presence-admin-toolbar .toolbar .level-4 a {
+  color: #d5d5d5 !important;
+}
+
+.presence-admin-toolbar .toolbar-handle.open {
+  border-top-left-radius: 10px;
+}
+
+.toolbar .toolbar-tray-vertical .level-3 ul {
+  margin-left: 0 !important;
+}
+
+.presence-admin-toolbar .toolbar-tray-vertical .level-3 a {
+  padding-left: 2.75em !important;
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal a:focus,
+.presence-admin-toolbar .toolbar-box a:focus {
+  background: #333;
+  text-decoration: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-vertical .toolbar-menu a {
+  color: #bbb;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-vertical .toolbar-menu a:hover,
+.presence-admin-toolbar .toolbar .toolbar-tray-vertical .toolbar-menu a:focus {
+  color: #fff;
+  background: #0084d7;
+  text-decoration: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-vertical .toolbar-menu ul ul {
+  border: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-horizontal .toolbar-toggle-orientation {
+  border: none;
+}
+
+.presence-admin-toolbar .toolbar .menu-item:hover {
+  background-color: #333;
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item a:focus {
+  background: #4c4c4c;
+}
+
+.presence-admin-toolbar .toolbar .menu-item--expanded {
+  background-color: #333;
+}
+.presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded,
+[dir="rtl"] .presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded {
+  background-image: none;
+  position: relative;
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .toolbar-menu ul .toolbar-icon {
+  padding: 1em 12px;
+}
+
+.toolbar-tray-horizontal .toolbar-menu:not(:first-child) li.menu-item--expanded > a:focus {
+  background-image: none !important;
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded .menu-item:hover ul {
+  margin: -39px 0 0 200px;
+}
+[dir="rtl"] .presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded .menu-item:hover ul {
+  margin: -39px 200px 0 0;
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded:after {
+  color: #8eacc0;
+  content: url(../images/0084d7/chevron-right.svg);
+  font-size: 16px;
+  pointer-events: none;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-8px);
+  transition: all .2s;
+}
+
+[dir="rtl"] .presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded:after {
+  right: auto;
+  left: 5px;
+  top: 30%;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded:hover:after {
+  content: url(../images/ffffff/chevron-right.svg);
+  transform: translate(6px, -8px);
+}
+
+[dir="rtl"] .presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded:hover:after {
+  transform-origin: 40% top;
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+.presence-admin-toolbar .toolbar .toolbar-menu .toolbar-menu a {
+  color: #bbb;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-menu .toolbar-menu a:hover {
+  color: #fff;
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal ul li.menu-item {
+  border-top: none transparent;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-horizontal .menu-item:last-child {
+  border-left: none;
+  border-right: none;
+}
+
+.presence-admin-toolbar .toolbar .toolbar-tray-horizontal ul  ul li.menu-item:first-child {
+  border-top: 1px solid #0084d7;
+}
+
+/* Removes border top on next consecutive lists after first */
+.presence-admin-toolbar .toolbar-tray-horizontal ul ul li li.menu-item:first-child {
+  border-top: none !important;
+}
+
+/* Main menu icons. */
+.presence-admin-toolbar .toolbar-icon-admin-toolbar-tools-help:before {
+  background-image: url(../images/acacac/sitewright-icon.svg);
+  margin-left: 7px;
+  padding: 0px;
+}
+
+.presence-admin-toolbar .toolbar-tray-vertical .toolbar-icon-admin-toolbar-tools-help:before {
+  margin-left: 0;
+}
+
+.presence-admin-toolbar .toolbar-icon-system-admin-content:before {
+  background-image: url(../images/acacac/file.svg);
+}
+
+.presence-admin-toolbar .toolbar-icon-system-admin-structure:before {
+  background-image: url(../images/acacac/orgchart.svg);
+}
+
+.presence-admin-toolbar .toolbar-icon-system-themes-page:before {
+  background-image: url(../images/acacac/paintbrush.svg);
+}
+
+.presence-admin-toolbar .toolbar-icon-entity-user-collection:before {
+  background-image: url(../images/acacac/people.svg);
+}
+
+.presence-admin-toolbar .toolbar-icon-system-modules-list:before {
+  background-image: url(../images/acacac/puzzlepiece.svg);
+}
+
+.presence-admin-toolbar .toolbar-icon-system-admin-config:before {
+  background-image: url(../images/acacac/wrench.svg);
+}
+
+.presence-admin-toolbar .toolbar-icon-system-admin-reports:before {
+  background-image: url(../images/acacac/barchart.svg);
+}
+
+.presence-admin-toolbar .toolbar-icon-help-main:before {
+  background-image: url(../images/acacac/questionmark-disc.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-admin-toolbar-tools-help:before,
+.presence-admin-toolbar .toolbar-icon-admin-toolbar-tools-help:hover:before,
+.presence-admin-toolbar .toolbar-icon-admin-toolbar-tools-help:active:before,
+.presence-admin-toolbar .toolbar-icon-admin-toolbar-tools-help.is-active:before {
+  background-image: url(../images/ffffff/sitewright-icon.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-system-admin-content:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-content:hover:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-content:active:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-content.is-active:before {
+  background-image: url(../images/ffffff/file.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-system-admin-structure:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-structure:hover:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-structure:active:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-structure.is-active:before {
+  background-image: url(../images/ffffff/orgchart.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-system-themes-page:before,
+.presence-admin-toolbar .toolbar-icon-system-themes-page:hover:before,
+.presence-admin-toolbar .toolbar-icon-system-themes-page:active:before,
+.presence-admin-toolbar .toolbar-icon-system-themes-page.is-active:before {
+  background-image: url(../images/ffffff/paintbrush.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-entity-user-collection:before,
+.presence-admin-toolbar .toolbar-icon-entity-user-collection:hover:before,
+.presence-admin-toolbar .toolbar-icon-entity-user-collection:active:before,
+.presence-admin-toolbar .toolbar-icon-entity-user-collection.is-active:before {
+  background-image: url(../images/ffffff/people.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-system-modules-list:before,
+.presence-admin-toolbar .toolbar-icon-system-modules-list:hover:before,
+.presence-admin-toolbar .toolbar-icon-system-modules-list:active:before,
+.presence-admin-toolbar .toolbar-icon-system-modules-list.is-active:before {
+  background-image: url(../images/ffffff/puzzlepiece.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-system-admin-config:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-config:hover:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-config:active:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-config.is-active:before {
+  background-image: url(../images/ffffff/wrench.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-horizontal .menu-item--expanded:hover .toolbar-icon-system-admin-reports:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-reports:hover:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-reports:active:before,
+.presence-admin-toolbar .toolbar-icon-system-admin-reports.is-active:before {
+  background-image: url(../images/ffffff/barchart.svg);
+}
+
+.presence-admin-toolbar .menu-item--expanded:hover .toolbar-icon-help-main:before,
+.presence-admin-toolbar .toolbar-icon-help-main:hover:before,
+.presence-admin-toolbar .toolbar-icon-help-main:active:before,
+.presence-admin-toolbar .toolbar-icon-help-main.is-active:before {
+  background-image: url(../images/ffffff/questionmark-disc.svg);
+}
+
+.presence-admin-toolbar .toolbar-tray-vertical .toolbar-icon-admin-toolbar-tools-help {
+  text-indent: 0;
+  transition: none;
+}

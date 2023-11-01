@@ -1,0 +1,35 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.trainer.field_biography
+    - field.field.node.trainer.field_certifications
+    - field.field.node.trainer.field_facility_title
+    - field.field.node.trainer.field_personal_links
+    - field.field.node.trainer.field_trainer_headshot
+    - field.field.node.trainer.field_trainer_video
+    - field.field.node.trainer.field_weight
+    - node.type.trainer
+  module:
+    - user
+id: node.trainer.teaser
+targetEntityType: node
+bundle: trainer
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_biography: true
+  field_certifications: true
+  field_certifications_link: true
+  field_facility_title: true
+  field_personal_links: true
+  field_trainer_headshot: true
+  field_trainer_video: true
+  field_weight: true
+  langcode: true

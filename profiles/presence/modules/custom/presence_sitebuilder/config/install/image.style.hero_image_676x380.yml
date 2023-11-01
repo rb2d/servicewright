@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_676x380
+label: 'Hero Image 676x380'
+effects:
+  21811aa4-5828-40c9-8a22-6bc15a3bf45b:
+    uuid: 21811aa4-5828-40c9-8a22-6bc15a3bf45b
+    id: image_scale
+    weight: 2
+    data:
+      width: 676
+      height: 380
+      upscale: false

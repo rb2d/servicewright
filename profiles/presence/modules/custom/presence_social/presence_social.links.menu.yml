@@ -1,0 +1,14 @@
+
+# Social link group menu items definition
+entity.social_link_group.collection:
+  title: 'Social link group list'
+  route_name: entity.social_link_group.collection
+  description: 'List Social link group entities'
+  parent: system.admin_structure
+  weight: 100
+
+social_link_group.admin.structure.settings:
+  title: 'Social link group settings'
+  description: 'Configure Social link group entities'
+  route_name: social_link_group.settings
+  parent: system.admin_structure

@@ -1,0 +1,19 @@
+add social link group entities:
+  title: 'Create new Social link group entities'
+
+administer social link group entities:
+  title: 'Administer Social link group entities'
+  description: 'Allow to access the administration form to configure Social link group entities.'
+  restrict access: true
+
+delete social link group entities:
+  title: 'Delete Social link group entities'
+
+edit social link group entities:
+  title: 'Edit Social link group entities'
+
+view published social link group entities:
+  title: 'View published Social link group entities'
+
+view unpublished social link group entities:
+  title: 'View unpublished Social link group entities'

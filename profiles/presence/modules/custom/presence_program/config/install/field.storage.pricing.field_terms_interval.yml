@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - presence_program
+id: pricing.field_terms_interval
+field_name: field_terms_interval
+entity_type: pricing
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Days
+      label: Days
+    -
+      value: Weeks
+      label: Weeks
+    -
+      value: Months
+      label: Months
+    -
+      value: Years
+      label: Years
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

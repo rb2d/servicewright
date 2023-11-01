@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.affiliation_logos.field_affiliation_logo
+    - site_settings.site_setting_entity_type.affiliation_logos
+  module:
+    - entity_reference_revisions
+id: site_setting_entity.affiliation_logos.default
+targetEntityType: site_setting_entity
+bundle: affiliation_logos
+mode: default
+content:
+  field_affiliation_logo:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  fieldset: true
+  name: true
+  user_id: true

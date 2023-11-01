@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies: {  }
+id: facility_manager
+label: 'Facility manager'
+weight: 4
+is_admin: null
+permissions:
+  - 'access user profiles'
+  - 'add social link group entities'
+  - 'administer users'
+  - 'change own username'
+  - 'create paragraph content affiliation_logos'
+  - 'create paragraph content links'
+  - 'create paragraph content social_links'
+  - 'delete paragraph content affiliation_logos'
+  - 'delete paragraph content links'
+  - 'delete paragraph content social_links'
+  - 'delete social link group entities'
+  - 'edit social link group entities'
+  - 'exclude any node title'
+  - 'schedule publishing of nodes'
+  - 'update paragraph content affiliation_logos'
+  - 'update paragraph content links'
+  - 'update paragraph content social_links'
+  - 'use exclude node title'
+  - 'use text format activecampaign_script'
+  - 'use text format acuity_scheduler_script'
+  - 'use text format basic_html'
+  - 'use text format cta_textarea'
+  - 'use text format infusionsoft_filter'
+  - 'use text format mindbody_script'
+  - 'use text format ontraport_script'
+  - 'use text format restricted_html'
+  - 'use text format uplaunch_script'
+  - 'view scheduled content'
+  - 'view unpublished social link group entities'

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.links
+id: paragraph.links.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: links
+label: Link
+description: 'Add any internal or external links you would like to add to this blog post.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

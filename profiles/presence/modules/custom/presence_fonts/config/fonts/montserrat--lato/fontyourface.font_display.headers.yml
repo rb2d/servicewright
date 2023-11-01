@@ -1,0 +1,10 @@
+uuid: 78b5c251-5941-4139-b386-a5367c8e0b33
+langcode: en
+status: true
+dependencies: {  }
+id: headers
+label: headers
+font_url: 'https://www.google.com/webfonts/family?family=Montserrat&subset=latin#700'
+fallback: ''
+selectors: '.fontyourface section h1, .fontyourface section h2, .fontyourface section h3, .fontyourface section h4, .fontyourface section h5, .fontyourface section h6, .fontyourface footer h3, .fontyourface a#location-footer-accordian-trigger-label'
+theme: limber

@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the presence_color module.
+ */
+
+/**
+ * v.1.0.19 - update theme for form padding.
+ */
+
+function presence_color_update_8002()
+{
+    $site_settings = \Drupal::service('site_settings.loader');
+    \Drupal::service('presence_color.color')->compile($site_settings->loadByFieldset('design')['color_scheme']);
+}

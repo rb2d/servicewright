@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_logo
+    - media.type.affiliation_logo
+    - paragraphs.paragraphs_type.affiliation_logos
+id: paragraph.affiliation_logos.field_logo
+field_name: field_logo
+entity_type: paragraph
+bundle: affiliation_logos
+label: Logo
+description: 'Select an affiliation logo file you would like to add to the list of affiliations'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      affiliation_logo: affiliation_logo
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

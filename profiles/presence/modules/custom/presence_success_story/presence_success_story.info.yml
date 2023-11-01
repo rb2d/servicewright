@@ -1,0 +1,29 @@
+name: 'Presence Success Story'
+description: 'Provides Success Story content type and related configuration. Add or edit a success story.'
+type: module
+core: 8.x
+dependencies:
+  - allowed_formats
+  - entityqueue
+  - field
+  - field_layout
+  - image
+  - language
+  - layout_discovery
+  - layout_plugin_views
+  - media
+  - media_library
+  - menu_ui
+  - node
+  - node_title_help_text
+  - path
+  - presence_core
+  - presence_page
+  - responsive_image
+  - scheduler
+  - text
+  - user
+  - views
+package: Presence
+version: 8.x-1.0.17
+core_incompatible: false

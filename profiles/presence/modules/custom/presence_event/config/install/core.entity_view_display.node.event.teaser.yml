@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_address
+    - field.field.node.event.field_date
+    - field.field.node.event.field_geo_location
+    - field.field.node.event.field_sign_up_limit
+    - field.field.node.event.field_waiver
+    - field.field.node.event.webform
+    - node.type.event
+  module:
+    - text
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_address: true
+  field_date: true
+  field_geo_location: true
+  field_sign_up_limit: true
+  field_waiver: true
+  langcode: true
+  webform: true

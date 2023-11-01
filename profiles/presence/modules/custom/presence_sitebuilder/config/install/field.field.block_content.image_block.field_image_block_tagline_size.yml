@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_block
+    - field.storage.block_content.field_image_block_tagline_size
+  module:
+    - options
+id: block_content.image_block.field_image_block_tagline_size
+field_name: field_image_block_tagline_size
+entity_type: block_content
+bundle: image_block
+label: 'Tagline Size'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: medium-font
+default_value_callback: ''
+settings: {  }
+field_type: list_string

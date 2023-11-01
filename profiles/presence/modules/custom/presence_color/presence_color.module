@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file
+ * This contains custom feature of the module.
+ */
+
+use Drupal\Core\Asset\AttachedAssetsInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function presence_color_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // When color scheme is saved, generate theme.
+  if ($form_id == 'site_setting_entity_color_scheme_form' || $form_id == 'site_setting_entity_color_scheme_edit_form') {
+    $form['actions']['submit']['#submit'][] = 'color_site_settings_goto';
+  }
+
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function presence_color_page_attachments(array &$page) {
+  // Only attach if Limber is the current theme.
+  $current_theme = Drupal::service('theme.manager')->getActiveTheme()->getName();
+  if ('limber' == $current_theme) {
+    $path = 'public://theme-assets/scss/limber-generated.scss';
+    if (file_exists($path)) {
+      $page['#attached']['library'][] = 'limber/limber-generated';
+    }
+    else {
+      $page['#attached']['library'][] = 'limber/global-styles';
+    }
+    // ksm($page);
+  }
+}
+
+/**
+ * Implements hook_scss_compiler_import_paths_alter().
+ */
+function presence_color_scss_compiler_import_paths_alter(array &$additional_import_paths) {
+  // @todo these paths will need to change to a managed artifact location.
+  $additional_import_paths[] = drupal_get_path('theme', 'limber') . '/node_modules/foundation-sites/scss';
+  $additional_import_paths[] = drupal_get_path('theme', 'limber') . '/node_modules/motion-ui/src';
+
+}
+
+/**
+ * Generate theme.
+ */
+function color_site_settings_goto($form, FormStateInterface $form_state) {
+  $site_settings = \Drupal::service('site_settings.loader');
+  \Drupal::service('presence_color.color')->compile($site_settings->loadByFieldset('design')['color_scheme']);
+}
+
+/**
+ * Recursively copy files.
+ */
+function recurse_copy($src, $dst) {
+  $dir = opendir($src);
+  @mkdir($dst);
+  while (FALSE !== ($file = readdir($dir))) {
+    if (($file != '.') && ($file != '..')) {
+      if (is_dir($src . '/' . $file)) {
+        recurse_copy($src . '/' . $file, $dst . '/' . $file);
+      }
+      else {
+        copy($src . '/' . $file, $dst . '/' . $file);
+      }
+    }
+  }
+  closedir($dir);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function presence_integrations_site_setting_entity_delete(EntityInterface $entity) {
+  if ($entity->bundle() == 'color_scheme') {
+    \Drupal::service('presence_color.removeAssets')->delete();
+  }
+}

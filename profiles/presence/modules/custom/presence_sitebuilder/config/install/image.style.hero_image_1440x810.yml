@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_1440x810
+label: 'Hero Image 1440x810'
+effects:
+  fe30f8b0-97b6-4b53-8ac2-82e3510bc31e:
+    uuid: fe30f8b0-97b6-4b53-8ac2-82e3510bc31e
+    id: image_scale
+    weight: 2
+    data:
+      width: 1440
+      height: 810
+      upscale: false

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_block
+    - field.storage.block_content.field_tagline_alignment
+  module:
+    - options
+id: block_content.image_block.field_tagline_alignment
+field_name: field_tagline_alignment
+entity_type: block_content
+bundle: image_block
+label: 'Tagline Alignment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: tagline-center
+default_value_callback: ''
+settings: {  }
+field_type: list_string

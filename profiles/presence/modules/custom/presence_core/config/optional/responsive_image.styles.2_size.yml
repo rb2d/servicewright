@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.2_size_large
+    - image.style.2_size_small
+  theme:
+    - limber
+id: 2_size
+label: '2 size'
+image_style_mappings:
+  -
+    breakpoint_id: limber.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 2_size_large
+  -
+    breakpoint_id: limber.medium
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: 2_size_large
+  -
+    breakpoint_id: limber.small
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: 2_size_small
+  -
+    breakpoint_id: limber.small
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: 2_size_large
+breakpoint_group: limber
+fallback_image_style: 2_size_small

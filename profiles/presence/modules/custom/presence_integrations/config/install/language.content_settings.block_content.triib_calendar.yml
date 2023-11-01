@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.triib_calendar
+id: block_content.triib_calendar
+target_entity_type_id: block_content
+target_bundle: triib_calendar
+default_langcode: site_default
+language_alterable: false

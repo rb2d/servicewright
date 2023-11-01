@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.program.body
+    - field.field.node.program.field_pricing_group
+    - field.field.node.program.field_program_image_hero
+    - node.type.program
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - options
+    - text
+    - user
+    - xy_grid_layouts
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: xy-grid-6-6
+        layout_settings:
+          label: ''
+          wrappers:
+            sidebar_left: div
+            sidebar_right: div
+          grid:
+            type: grid-x
+            classes: grid-margin-x
+            id: ''
+          grid_container:
+            type: ''
+            classes: ''
+            id: ''
+          breakpoint: medium
+        components:
+          67e5a2e2-66ec-443d-8b2c-285b1c3a5d8f:
+            uuid: 67e5a2e2-66ec-443d-8b2c-285b1c3a5d8f
+            region: sidebar_left
+            configuration:
+              id: 'field_block:node:program:field_program_image_hero'
+              label: 'Program Hero Image'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: default
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+            third_party_settings: {  }
+          27e85441-098d-4ad8-9fce-40dd8eff5c1d:
+            uuid: 27e85441-098d-4ad8-9fce-40dd8eff5c1d
+            region: sidebar_right
+            configuration:
+              id: 'field_block:node:program:body'
+              label: 'Program Description'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+            third_party_settings: {  }
+        third_party_settings: {  }
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks: {  }
+      allowed_layouts: {  }
+  layout_library:
+    enable: false
+id: node.program.default
+targetEntityType: node
+bundle: program
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_pricing_group:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: first
+  field_program_image_hero:
+    type: entity_reference_entity_view
+    weight: 3
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: first
+hidden:
+  langcode: true
+  links: true

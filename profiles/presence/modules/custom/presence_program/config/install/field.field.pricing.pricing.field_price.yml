@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.pricing.field_price
+  module:
+    - presence_program
+id: pricing.pricing.field_price
+field_name: field_price
+entity_type: pricing
+bundle: pricing
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the presence_webform module.
+ */
+
+/**
+ * V0.0.9-RC9 Add layout builder ability for webform content type. 
+ */
+function presence_webform_update_8001() {
+
+
+  // Feature config import.
+  $feature_list = [
+    'presence_webform',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};

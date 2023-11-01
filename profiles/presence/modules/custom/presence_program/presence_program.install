@@ -1,0 +1,152 @@
+<?php
+
+/**
+ * @file
+ * Manage install and update hooks.
+ */
+
+use Drupal\presence_program\Entity\Pricing;
+use Drupal\node\Entity\Node;
+use Drupal\entityqueue\Entity\EntityQueue;
+use Drupal\Core\Config\FileStorage;
+use Drupal\field\Entity\FieldStorageConfig;
+
+/**
+ * Enable entity_reference_exposed_filters module  SWP-288.
+ */
+function presence_program_update_8001() {
+  \Drupal::service('module_installer')->install(['entity_reference_exposed_filters'], TRUE);
+}
+
+/**
+ * Enable entity_reference_exposed_filters module  SWP-288.
+ */
+function presence_program_update_8002() {
+  $config_path = drupal_get_path('module', 'presence_program') . '/config/install';
+  $source = new FileStorage($config_path);
+  $config_storage = \Drupal::service('config.storage');
+  $config_storage->write('views.view.program_schedule_list', $source->read('views.view.program_schedule_list'));
+}
+
+/**
+ * Delete Terms Field SWP-339.
+ */
+function presence_program_update_8003() {
+  // Deleting field storage.
+  FieldStorageConfig::loadByName('pricing', 'field_terms')->delete();
+}
+
+/**
+ * V0.0.9-RC14 added entity queue (sort).
+ */
+function presence_program_update_8006() {
+  $feature_list = [
+    'presence_program',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * Add Entities to program queue.
+ */
+function presence_program_update_8007() {
+  $queues = auto_entityqueue_get_queues_by_type_and_bundle('node', 'program');
+  $queue = $queues[0];
+  $nids = \Drupal::entityQuery('node')->condition('type', 'program')->execute();
+  $programs = Node::loadMultiple($nids);
+  foreach ($programs as $program) {
+    auto_entityqueue_add_entity_to_queue($program, $queue);
+  }
+}
+
+/**
+ * V1.0.12 - fixed allowed formats.
+ */
+function presence_program_update_8010() {
+  $feature_list = [
+    'presence_program',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V1.0.13 - delete fields_terms_days, import new pricing fields.
+ */
+function presence_program_update_8011() {
+
+  // Deleting field storage.
+  FieldStorageConfig::loadByName('pricing', 'field_terms_days')->delete();
+
+  $feature_list = [
+    'presence_program',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V1.0.14 update configuration.
+ */
+function presence_program_update_8013() {
+
+  $feature_list = [
+    'presence_program',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V1.0.18 filter pricing cards by published, allow sorting.
+ */
+function presence_program_update_8015() {
+
+  drupal_flush_all_caches();
+
+  $feature_list = [
+    'presence_program',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * v1.0.18 - Generate entities for pricing entityqueue.
+ */
+function presence_program_update_8016() {
+  $queues = EntityQueue::loadMultipleByTargetType('pricing');
+  foreach ($queues as $queue) {
+    $target_queues = $queue;
+  }
+  $pricing_ids = \Drupal::entityQuery('pricing')->execute();
+  $pricings = \Drupal::entityTypeManager()->getStorage('pricing')->loadMultiple($pricing_ids);
+  foreach ($pricings as $pricing) {
+    auto_entityqueue_add_entity_to_queue($pricing, $queue);
+  }
+}
+
+/**
+ * Update hook to update new internal field.
+ */
+function presence_program_update_8017() {
+  $pricings = Pricing::loadMultiple();
+  foreach ($pricings as $pricing) {
+    $terms_count = $pricing->get('field_terms_count')->value;
+    $terms_interval = strtolower($pricing->get('field_terms_interval')->value);
+    $pricing->field_interval->interval = $terms_count;
+    $pricing->field_interval->period = substr($terms_interval, 0, -1);
+    $pricing->save();
+  }
+}

@@ -1,0 +1,20 @@
+name: 'Presence Integrations'
+description: 'Provides integrations for various providers'
+type: module
+core: 8.x
+dependencies:
+  - allowed_formats
+  - block_content
+  - field
+  - field_layout
+  - filter
+  - language
+  - layout_discovery
+  - media
+  - presence_sitebuilder
+  - site_settings
+  - text
+  - user
+version: 8.x-1.0.19
+package: Presence
+core_incompatible: false

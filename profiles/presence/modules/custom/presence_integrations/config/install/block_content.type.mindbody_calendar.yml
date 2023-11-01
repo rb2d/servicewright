@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: mindbody_calendar
+label: 'Integration - MindBody Calendar'
+revision: 0
+description: 'Block type to be place MindBody Calendar in layout builder.'

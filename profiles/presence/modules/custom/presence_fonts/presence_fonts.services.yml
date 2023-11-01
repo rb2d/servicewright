@@ -1,0 +1,3 @@
+services:
+    presence_fonts.ImportFonts:
+        class: Drupal\presence_fonts\ImportFonts

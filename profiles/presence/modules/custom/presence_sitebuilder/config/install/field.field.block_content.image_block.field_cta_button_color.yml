@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_block
+    - field.storage.block_content.field_cta_button_color
+  module:
+    - options
+id: block_content.image_block.field_cta_button_color
+field_name: field_cta_button_color
+entity_type: block_content
+bundle: image_block
+label: 'CTA Button Color'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: primary
+default_value_callback: ''
+settings: {  }
+field_type: list_string

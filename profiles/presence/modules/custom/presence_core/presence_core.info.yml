@@ -1,0 +1,44 @@
+name: 'Presence Core'
+description: 'Provides core components required by other features.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - block_content
+  - color_field
+  - contact
+  - content_translation
+  - entity_embed
+  - entity_reference_revisions
+  - field
+  - field_layout
+  - file
+  - fontyourface
+  - google_analytics
+  - image
+  - language
+  - layout_builder
+  - layout_discovery
+  - link
+  - link_attributes
+  - media
+  - media_library
+  - menu_link_content
+  - node
+  - paragraphs
+  - path
+  - path_alias
+  - presence_sitebuilder
+  - redis
+  - responsive_image
+  - shortcut
+  - site_settings
+  - system
+  - taxonomy
+  - text
+  - tour
+  - twig_tweak
+  - user
+package: Presence
+version: 8.x-1.0.20
+core_incompatible: false

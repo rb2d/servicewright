@@ -1,0 +1,99 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.location.field_address
+    - field.field.node.location.field_description
+    - field.field.node.location.field_facility_gallery
+    - field.field.node.location.field_facility_phone
+    - field.field.node.location.field_geo_location
+    - field.field.node.location.field_social_links_groups
+    - node.type.location
+  module:
+    - address
+    - geolocation
+    - image
+    - layout_builder
+    - telephone
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    sections: {  }
+id: node.location.default
+targetEntityType: node
+bundle: location
+mode: default
+content:
+  field_address:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_default
+    region: content
+  field_description:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_facility_gallery:
+    weight: 3
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_facility_phone:
+    weight: 0
+    label: above
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_geo_location:
+    weight: 2
+    label: above
+    settings:
+      set_marker: '1'
+      title: 'Facility Location'
+      info_text: ''
+      google_map_settings:
+        height: 400px
+        width: 100%
+        type: TERRAIN
+        zoom: '10'
+        maxZoom: 18
+        minZoom: 0
+        mapTypeControl: 1
+        streetViewControl: 1
+        zoomControl: 1
+        rotateControl: 1
+        scrollwheel: 1
+        gestureHandling: auto
+        draggable: 1
+        style: ''
+        info_auto_display: 1
+        marker_icon_path: '[presence:map_url]'
+        disableAutoPan: 1
+        fullscreenControl: 0
+        preferScrollingToZooming: 0
+        disableDoubleClickZoom: 0
+      use_overridden_map_settings: 0
+      common_map: ''
+    third_party_settings: {  }
+    type: geolocation_map
+    region: content
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_social_links_groups: true
+  langcode: true

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.acuity_scheduler
+    - field.field.block_content.acuity_scheduler.field_ext_acuity_sched_code
+  module:
+    - text
+id: block_content.acuity_scheduler.default
+targetEntityType: block_content
+bundle: acuity_scheduler
+mode: default
+content:
+  field_ext_acuity_sched_code:
+    weight: 1
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

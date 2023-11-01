@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.mindbody_calendar
+    - field.field.block_content.mindbody_calendar.field_ext_mindbody_cal
+  module:
+    - text
+id: block_content.mindbody_calendar.default
+targetEntityType: block_content
+bundle: mindbody_calendar
+mode: default
+content:
+  field_ext_mindbody_cal:
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

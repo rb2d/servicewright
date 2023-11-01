@@ -1,0 +1,5 @@
+name: 'presence_help'
+type: module
+description: 'Chat Bot Module for Admins'
+core: 8.x
+package: 'Custom'

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.app_palestre
+    - field.field.block_content.app_palestre.field_ext_apppalestre
+id: block_content.app_palestre.default
+targetEntityType: block_content
+bundle: app_palestre
+mode: default
+content:
+  field_ext_apppalestre:
+    weight: 0
+    label: visually_hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  langcode: true

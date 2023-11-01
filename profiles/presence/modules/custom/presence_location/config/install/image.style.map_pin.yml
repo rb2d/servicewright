@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: map_pin
+label: 'Map Pin'
+effects:
+  5c433d66-e895-44c2-83c2-066a211c0068:
+    uuid: 5c433d66-e895-44c2-83c2-066a211c0068
+    id: image_scale
+    weight: 2
+    data:
+      width: 50
+      height: 50
+      upscale: false

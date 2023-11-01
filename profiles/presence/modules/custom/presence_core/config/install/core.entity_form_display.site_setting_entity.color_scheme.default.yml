@@ -1,0 +1,118 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.color_scheme.field_color_black
+    - field.field.site_setting_entity.color_scheme.field_color_primary
+    - field.field.site_setting_entity.color_scheme.field_color_secondary
+    - field.field.site_setting_entity.color_scheme.field_color_tertiary
+    - field.field.site_setting_entity.color_scheme.field_color_white
+    - site_settings.site_setting_entity_type.color_scheme
+  module:
+    - color_field
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: site_setting_entity.color_scheme.default
+targetEntityType: site_setting_entity
+bundle: color_scheme
+mode: default
+content:
+  field_color_black:
+    weight: 14
+    settings:
+      show_input: '1'
+      show_palette: '1'
+      palette: ''
+      show_buttons: '1'
+      allow_empty: '1'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_color_primary:
+    weight: 11
+    settings:
+      show_input: '1'
+      show_palette: '1'
+      palette: ''
+      show_buttons: '1'
+      allow_empty: '1'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_color_secondary:
+    weight: 12
+    settings:
+      show_input: '1'
+      show_palette: '1'
+      palette: ''
+      show_buttons: '1'
+      allow_empty: '1'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_color_tertiary:
+    weight: 13
+    settings:
+      show_input: '1'
+      show_palette: '1'
+      palette: ''
+      show_buttons: '1'
+      allow_empty: '1'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  field_color_white:
+    weight: 15
+    settings:
+      show_input: '1'
+      show_palette: '1'
+      palette: ''
+      show_buttons: '1'
+      allow_empty: '1'
+      show_palette_only: '0'
+    third_party_settings: {  }
+    type: color_field_widget_spectrum
+    region: content
+  fieldset:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 10
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: -4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

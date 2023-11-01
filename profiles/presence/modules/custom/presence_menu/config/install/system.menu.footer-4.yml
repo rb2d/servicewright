@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: footer-4
+label: 'Footer 4'
+description: 'fourth footer menu'
+locked: false

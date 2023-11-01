@@ -1,0 +1,14 @@
+icon:
+  css:
+    layout:
+      css/icon.css: {}
+
+counter:
+  js:
+    js/counter.js: {}
+    js/countercall.js: {}
+
+intercom:
+  js:
+    js/intercom.js: {}
+    js/intercomsettings.js: {}

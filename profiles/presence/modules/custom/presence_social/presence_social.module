@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * This contains custom feature of the module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function presence_social_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $keys = array_keys($form);
+  if (in_array('field_social_links_groups', $keys) || $form_id == 'social_link_group_add_form' || $form_id == 'social_link_group_edit_form') {
+    $form['#attached']['library'][] = 'presence_social/get_provider';
+  }
+}

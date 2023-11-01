@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies: {  }
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'search content'
+  - 'use exclude node title'
+  - 'view media'
+  - 'view paragraph content affiliation_logos'
+  - 'view paragraph content from_library'
+  - 'view paragraph content links'
+  - 'view paragraph content social_links'
+  - 'view published social link group entities'

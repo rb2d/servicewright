@@ -1,0 +1,12 @@
+name: 'Presence menu'
+description: 'A feature to manage menu defaults'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - presence_core
+  - presence_sitebuilder
+  - system
+version: 8.x-1.0.9-RC10
+package: Presence
+core_incompatible: false

@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 2_size_large
+label: '2 size large'
+effects:
+  4c6eba84-eb06-4603-9c0c-355b05e0475e:
+    uuid: 4c6eba84-eb06-4603-9c0c-355b05e0475e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 900
+      anchor: center-center

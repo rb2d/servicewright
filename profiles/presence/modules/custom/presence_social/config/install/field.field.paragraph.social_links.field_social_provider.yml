@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_social_provider
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - options
+id: paragraph.social_links.field_social_provider
+field_name: field_social_provider
+entity_type: paragraph
+bundle: social_links
+label: 'Social Provider'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

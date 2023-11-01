@@ -1,0 +1,71 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - ckeditor
+format: basic_html
+editor: ckeditor
+settings:
+  toolbar:
+    rows:
+      -
+        -
+          name: 'Text styles'
+          items:
+            - Format
+            - Styles
+        -
+          name: Formatting
+          items:
+            - Bold
+            - Underline
+            - Italic
+            - SpecialChar
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+        -
+          name: Linking
+          items:
+            - DrupalLink
+            - DrupalUnlink
+        -
+          name: Lists
+          items:
+            - BulletedList
+            - NumberedList
+        -
+          name: Media
+          items:
+            - Blockquote
+            - DrupalImage
+        -
+          name: Tools
+          items:
+            - Table
+            - Maximize
+            - Source
+  plugins:
+    stylescombo:
+      styles: "p.primary-color|Primary Color\r\np.secondary-color|Secondary Color\r\np.tertiary-color|Tertiary Color\r\np.white-color|Light Text\r\np.black-color|Dark Text"
+    language:
+      language_list: un
+    wordcount:
+      enable: 0
+      show_paragraphs: 0
+      show_word_count: 0
+      show_char_count: 0
+      count_spaces: 0
+      count_html: 0
+      max_words: '-1'
+      max_chars: '-1'
+image_upload:
+  status: true
+  scheme: public
+  directory: inline-images
+  max_size: ''
+  max_dimensions:
+    width: null
+    height: null

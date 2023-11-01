@@ -1,0 +1,5 @@
+entity.social_link_group.add_form:
+  route_name: entity.social_link_group.add_form
+  title: 'Add Social link group'
+  appears_on:
+    - entity.social_link_group.collection

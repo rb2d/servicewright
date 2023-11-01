@@ -1,0 +1,8 @@
+name: Presence Dev
+type: module
+core: 8.x
+dependencies:
+  - devel
+  - devel_generate
+  - simple_styleguide
+package: Presence

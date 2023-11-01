@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: blog_entry
+label: 'Blog entry'
+type: 'canonical_entities:node'
+pattern: '/blog/[node:field_category]/[node:title]'
+selection_criteria:
+  050e67dc-a0d4-4578-8cfd-4269cf9821ec:
+    id: node_type
+    bundles:
+      blog: blog
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 050e67dc-a0d4-4578-8cfd-4269cf9821ec
+selection_logic: and
+weight: -5
+relationships: {  }

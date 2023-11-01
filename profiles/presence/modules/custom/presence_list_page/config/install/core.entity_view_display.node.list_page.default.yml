@@ -1,0 +1,148 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.list_page.body
+    - field.field.node.list_page.field_display_page_title
+    - field.field.node.list_page.layout_builder__layout
+    - node.type.list_page
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_discovery
+    - layout_library
+    - presence_layout
+    - system
+    - text
+    - user
+    - xy_grid_layouts
+third_party_settings:
+  layout_builder:
+    allow_custom: true
+    enabled: true
+    sections:
+      -
+        layout_id: swp-xy-grid-12
+        layout_settings:
+          label: ''
+          wrappers:
+            main: div
+          grid:
+            type: grid-x
+            classes: ''
+            id: ''
+          grid_container:
+            type: ''
+            classes: ''
+            id: ''
+          breakpoint: medium
+        components:
+          8603ac5c-f20f-4179-98a0-7433ee845f98:
+            uuid: 8603ac5c-f20f-4179-98a0-7433ee845f98
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:list_page:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+            third_party_settings: {  }
+          8a99b980-ba8b-4964-aff8-b8e34f7c9ffe:
+            uuid: 8a99b980-ba8b-4964-aff8-b8e34f7c9ffe
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:list_page:links'
+            additional: {  }
+            weight: 2
+            third_party_settings: {  }
+          d6120a63-f030-4a20-a4f0-d44fbe1b2d85:
+            uuid: d6120a63-f030-4a20-a4f0-d44fbe1b2d85
+            region: main
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+            third_party_settings: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+  layout_builder_restrictions:
+    entity_view_mode_restriction:
+      allowed_blocks:
+        'Chaos Tools': {  }
+        Forms:
+          - search_form_block
+        'Lists (Views)':
+          - 'views_block:blog_categories-block_1'
+          - 'views_block:blog_list-block_1'
+          - 'views_block:programs-block_1'
+          - 'views_block:schedule-block_1'
+          - 'views_block:success_stories-block_1'
+          - 'views_block:trainers-block_2'
+          - 'views_block:trainers-block_3'
+        Menus: {  }
+        'Presence Core': {  }
+        'Presence Sitebuilder': {  }
+        'Presence Trainer': {  }
+        'Site Settings and Labels': {  }
+        System:
+          - system_breadcrumb_block
+          - node_syndicate_block
+        User: {  }
+        'User fields': {  }
+      allowed_layouts:
+        - xy-grid-4-8
+        - xy-grid-5-7
+        - xy-grid-6-6
+        - xy-grid-7-5
+        - xy-grid-8-4
+        - swp-xy-grid-12
+id: node.list_page.default
+targetEntityType: node
+bundle: list_page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_display_page_title:
+    weight: 102
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: main
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  layout_builder__layout: true

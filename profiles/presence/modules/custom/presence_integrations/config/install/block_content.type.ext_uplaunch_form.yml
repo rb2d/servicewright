@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ext_uplaunch_form
+label: 'Integration - Uplaunch form'
+revision: 0
+description: 'Block type to be place Uplaunch forms in layout builder.'

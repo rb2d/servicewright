@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: trainer_pathauto
+label: 'trainer pathauto'
+type: 'canonical_entities:node'
+pattern: '/team/[node:title]'
+selection_criteria:
+  a41326b5-defa-4c80-81b5-7872a4a08069:
+    id: node_type
+    bundles:
+      trainer: trainer
+    negate: false
+    context_mapping:
+      node: node
+    uuid: a41326b5-defa-4c80-81b5-7872a4a08069
+selection_logic: and
+weight: -5
+relationships: {  }

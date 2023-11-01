@@ -1,0 +1,35 @@
+name: 'Presence Homepage'
+type: module
+core: 8.x
+dependencies:
+  - block_content
+  - field
+  - field_layout
+  - file
+  - image
+  - language
+  - layout_builder
+  - layout_builder_restrictions
+  - layout_discovery
+  - layout_library
+  - link
+  - link_attributes
+  - media
+  - media_library
+  - menu_ui
+  - node
+  - node_revision_delete
+  - node_title_help_text
+  - path
+  - presence_core
+  - presence_layout
+  - presence_page
+  - presence_sitebuilder
+  - scheduler
+  - site_settings
+  - user
+  - xy_grid_layouts
+package: Presence
+description: 'CT Homepage and all of its requirements. '
+version: 8.x-1.0.20
+core_incompatible: false

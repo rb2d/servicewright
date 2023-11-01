@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: favicon
+label: 'Favicon (512 x 512)'
+effects:
+  5fea6b90-9ae5-45ff-80e4-22723596db20:
+    uuid: 5fea6b90-9ae5-45ff-80e4-22723596db20
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 512
+      height: 512
+      anchor: center-center

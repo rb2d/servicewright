@@ -1,0 +1,112 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.pricing.pricing.field_cta_button
+    - field.field.pricing.pricing.field_features
+    - field.field.pricing.pricing.field_individual
+    - field.field.pricing.pricing.field_interval
+    - field.field.pricing.pricing.field_price
+    - field.field.pricing.pricing.field_program
+    - field.field.pricing.pricing.field_terms_count
+    - field.field.pricing.pricing.field_terms_interval
+  module:
+    - interval
+    - link
+    - options
+    - presence_program
+    - user
+id: pricing.pricing.default
+targetEntityType: pricing
+bundle: pricing
+mode: default
+content:
+  field_cta_button:
+    weight: 4
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_features:
+    weight: 3
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_individual:
+    weight: 8
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_interval:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: interval_default
+    region: content
+  field_price:
+    weight: 2
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_program:
+    weight: 7
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_terms_count:
+    weight: 9
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_terms_interval:
+    weight: 10
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  name:
+    label: above
+    type: string
+    weight: 0
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  user_id:
+    label: hidden
+    type: author
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

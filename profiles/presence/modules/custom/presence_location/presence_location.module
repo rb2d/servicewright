@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Exposes global functionality for location module.
+ */
+
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * @file
+ * Provides custom functionalities.
+ */
+
+/**
+ * Implements hook_token_info().
+ */
+function presence_location_token_info() {
+  $info = [];
+  $info['types']['presence'] = ['name' => t('Presence Custom Group'), 'description' => t('Custom Group')];
+  $info['tokens']['presence']['map_url'][] = 'A token to get the url of the image configured.';
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function presence_location_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
+  $replacements = [];
+  if ($type == 'presence') {
+
+    foreach ($tokens as $name => $original) {
+      // Find the desired token by name.
+      switch ($name) {
+        case 'map_url':
+          $site_settings = \Drupal::service('site_settings.loader');
+          $settings = $site_settings->loadAll();
+          $url = ImageStyle::load('map_pin')->buildUrl($settings['map_icon']['map_icon']['uri']);
+          $replacements[$original] = $url;
+          break;
+      }
+    }
+  }
+  return $replacements;
+}

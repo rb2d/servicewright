@@ -1,0 +1,8 @@
+bundle: presence
+excluded:
+  - core.entity_form_display.node.blog.default
+  - core.entity_view_display.node.blog.default
+  - core.entity_view_display.node.blog.teaser
+  - field.field.node.blog.field_reference
+  - field.storage.node.field_reference
+required: true

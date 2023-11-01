@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - presence_program
+id: pricing
+label: Pricing
+handler: simple
+handler_configuration: {  }
+entity_settings:
+  target_type: pricing
+  handler: 'default:pricing'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+    auto_entityqueue:
+      auto_add: 1
+      insert_front: 0
+queue_settings:
+  min_size: 0
+  max_size: 0
+  act_as_queue: false
+  reverse_in_admin: false

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facility_phone
+    - node.type.location
+  module:
+    - telephone
+id: node.location.field_facility_phone
+field_name: field_facility_phone
+entity_type: node
+bundle: location
+label: 'Facility phone number'
+description: 'Please enter in your facility telephone numbers.  Feel free to add as many as you would like, although we would recommend no more than 2 if possible as the additional numbers will not be displayed unless a user clicks for more details (rare!)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

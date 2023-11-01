@@ -1,0 +1,9 @@
+name: 'Presence Color'
+description: 'Color Scheme Selection module'
+type: module
+core: 8.x
+dependencies:
+  - scss_compiler
+version: 8.x-1.0.19
+package: Presence
+core_incompatible: false

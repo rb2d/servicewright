@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.media_library
+    - field.field.media.affiliation_logo.field_media_image
+    - image.style.medium
+    - media.type.affiliation_logo
+  module:
+    - image
+id: media.affiliation_logo.media_library
+targetEntityType: media
+bundle: affiliation_logo
+mode: media_library
+content:
+  thumbnail:
+    type: image
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    weight: 0
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_image: true
+  langcode: true
+  name: true
+  uid: true

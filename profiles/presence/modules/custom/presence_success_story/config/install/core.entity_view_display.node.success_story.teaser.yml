@@ -1,0 +1,44 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.success_story.body
+    - field.field.node.success_story.field_after_photo
+    - field.field.node.success_story.field_age
+    - field.field.node.success_story.field_before_photo
+    - field.field.node.success_story.field_name
+    - field.field.node.success_story.field_static_photo
+    - field.field.node.success_story.field_video
+    - field.field.node.success_story.layout_selection
+    - node.type.success_story
+  module:
+    - text
+    - user
+id: node.success_story.teaser
+targetEntityType: node
+bundle: success_story
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_after_photo: true
+  field_age: true
+  field_before_photo: true
+  field_name: true
+  field_static_photo: true
+  field_video: true
+  langcode: true
+  layout_selection: true

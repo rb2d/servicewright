@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - site_settings
+id: site_setting_entity.field_select_view_mode
+field_name: field_select_view_mode
+entity_type: site_setting_entity
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: row
+      label: Row
+    -
+      value: grid
+      label: Grid
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

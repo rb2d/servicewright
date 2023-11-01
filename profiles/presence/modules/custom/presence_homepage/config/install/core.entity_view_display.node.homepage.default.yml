@@ -1,0 +1,127 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.homepage.field_display_page_title
+    - field.field.node.homepage.layout_builder__layout
+    - node.type.homepage
+  module:
+    - layout_builder
+    - layout_builder_restrictions
+    - layout_library
+    - presence_layout
+    - user
+    - xy_grid_layouts
+third_party_settings:
+  layout_builder:
+    sections:
+      -
+        layout_id: swp-xy-grid-12
+        layout_settings:
+          label: ''
+          wrappers:
+            main: div
+          grid:
+            type: grid-x
+            classes: ''
+            id: ''
+          grid_container:
+            type: full
+            classes: ''
+            id: ''
+          breakpoint: medium
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: swp-xy-grid-12
+        layout_settings:
+          label: ''
+          wrappers:
+            main: div
+          grid:
+            type: grid-x
+            classes: ''
+            id: ''
+          grid_container:
+            type: ''
+            classes: ''
+            id: ''
+          breakpoint: medium
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: swp-xy-grid-12
+        layout_settings:
+          label: ''
+          wrappers:
+            main: div
+          grid:
+            type: grid-x
+            classes: ''
+            id: ''
+          grid_container:
+            type: full
+            classes: ''
+            id: ''
+          breakpoint: medium
+        components: {  }
+        third_party_settings: {  }
+    allow_custom: true
+    enabled: true
+  layout_builder_restrictions:
+    allowed_blocks: {  }
+    allowed_layouts: {  }
+    entity_view_mode_restriction:
+      allowed_blocks:
+        'Chaos Tools': {  }
+        Forms: {  }
+        'Lists (Views)':
+          - 'views_block:pricing_entity-block_1'
+          - 'views_block:programs-block_1'
+          - 'views_block:schedule-block_1'
+          - 'views_block:success_stories-block_1'
+          - 'views_block:trainers-block_2'
+          - 'views_block:trainers-block_3'
+        Menus: {  }
+        'Presence Core': {  }
+        'Presence Sitebuilder': {  }
+        'Presence Trainer': {  }
+        'Site Settings and Labels': {  }
+        System: {  }
+        User: {  }
+        'User fields': {  }
+        Webform: {  }
+        core: {  }
+      allowed_layouts:
+        - swp-xy-grid-12
+        - xy-grid-4-8
+        - xy-grid-5-7
+        - xy-grid-6-6
+        - xy-grid-7-5
+        - xy-grid-8-4
+        - xy-grid-4-4-4
+  layout_library:
+    enable: false
+id: node.homepage.default
+targetEntityType: node
+bundle: homepage
+mode: default
+content:
+  field_display_page_title:
+    weight: 101
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: main
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true
+  layout_builder__layout: true

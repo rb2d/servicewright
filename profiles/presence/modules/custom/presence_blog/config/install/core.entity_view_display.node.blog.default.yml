@@ -1,0 +1,189 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.blog.body
+    - field.field.node.blog.field_category
+    - field.field.node.blog.field_image
+    - field.field.node.blog.field_links
+    - field.field.node.blog.field_reference
+    - field.field.node.blog.field_tags
+    - field.field.node.blog.field_video
+    - node.type.blog
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - layout_library
+    - system
+    - text
+    - user
+    - xy_grid_layouts
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: xy-grid-12
+        layout_settings:
+          label: ''
+          wrappers:
+            main: div
+          grid:
+            type: grid-x
+            classes: ''
+            id: ''
+          grid_container:
+            type: ''
+            classes: ''
+            id: ''
+          breakpoint: medium
+        components:
+          b1fd3ac7-4f56-4697-8228-1cb8554d1439:
+            uuid: b1fd3ac7-4f56-4697-8228-1cb8554d1439
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:blog:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+            third_party_settings: {  }
+          41b13545-b185-4037-ab8c-947d3c7f5a50:
+            uuid: 41b13545-b185-4037-ab8c-947d3c7f5a50
+            region: main
+            configuration:
+              id: 'field_block:node:blog:field_image'
+              label: Image
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: 2_size
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+            third_party_settings: {  }
+          c77eb280-abd4-45bd-925e-896a30bf28cd:
+            uuid: c77eb280-abd4-45bd-925e-896a30bf28cd
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:blog:field_video'
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: default
+                  link: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 3
+            third_party_settings: {  }
+          995bc94e-0d2b-4dce-b42d-a3f3dcb3e9ad:
+            uuid: 995bc94e-0d2b-4dce-b42d-a3f3dcb3e9ad
+            region: main
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:blog:field_tags'
+              formatter:
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 4
+            third_party_settings: {  }
+          3caec6f0-1131-4958-ab1f-1a6a0b04129c:
+            uuid: 3caec6f0-1131-4958-ab1f-1a6a0b04129c
+            region: main
+            configuration:
+              id: system_breadcrumb_block
+              label: Breadcrumbs
+              provider: system
+              label_display: '0'
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+            third_party_settings: {  }
+        third_party_settings: {  }
+  layout_library:
+    enable: false
+id: node.blog.default
+targetEntityType: node
+bundle: blog
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_category:
+    weight: 105
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    type: entity_reference_entity_view
+    weight: 102
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_links:
+    type: entity_reference_revisions_entity_view
+    weight: 104
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_tags:
+    weight: 106
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_video:
+    type: entity_reference_entity_view
+    weight: 103
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_reference: true
+  langcode: true

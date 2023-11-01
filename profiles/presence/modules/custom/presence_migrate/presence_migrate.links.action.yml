@@ -1,0 +1,7 @@
+# migration links
+presence_migrate.link_add_files:
+  route_name: 'presence_migrate.wp_export_upload_form'
+  title: 'Step 1: Upload WP export files'
+  weight: -20
+  appears_on:
+      - entity.migration_group.list

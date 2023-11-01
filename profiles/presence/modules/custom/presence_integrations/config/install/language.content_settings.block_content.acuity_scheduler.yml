@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.acuity_scheduler
+id: block_content.acuity_scheduler
+target_entity_type_id: block_content
+target_bundle: acuity_scheduler
+default_langcode: site_default
+language_alterable: false

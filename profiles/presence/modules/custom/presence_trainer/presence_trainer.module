@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * This contains custom feature of the module.
+ */
+
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function presence_trainer_form_alter(array &$form, FormStateInterface $form_state, $form_id) {
+
+  if ($form_id == 'site_setting_entity_trainers_view_mode_edit_form') {
+    $form['actions']['submit']['#submit'][] = 'presence_trainer_site_settings_goto';
+  }
+
+  if ($form_id == 'entity_subqueue_trainers_edit_form') {
+    $form['#title'] = t('Sort Trainers');
+  }
+}
+
+/**
+ * Clear cache on form submission.
+ */
+function presence_trainer_site_settings_goto($form, FormStateInterface $form_state) {
+  $tags = ['block:trainer_list'];
+  Cache::invalidateTags($tags);
+}
+
+/**
+ * Implements hook_contextual_links_alter().
+ */
+function presence_trainer_contextual_links_alter(array &$links, $group, array $route_parameters) {
+  if ($group == 'entityqueue') {
+    $links['entity.entity_subqueue.edit_form']['title'] = t('Rearrange display order');
+  }
+}
+
+/**
+ * Implements hook_contextual_links_view_alter().
+ *
+ * Change Configure Trainer Sorting into modal links.
+ */
+function presence_trainer_contextual_links_view_alter(&$element, $items) {
+  if (isset($element['#links']['entityentity-subqueueedit-form'])) {
+    $element['#links']['entityentity-subqueueedit-form']['attributes'] = [
+      'class' => ['use-ajax'],
+      'data-dialog-type' => 'modal',
+      'data-dialog-options' => '{"width":"80%"}',
+    ];
+  }
+}

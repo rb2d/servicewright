@@ -1,0 +1,10 @@
+
+presence_migrate.wp_export_upload_form:
+  path: '/admin/migrate/presence_gwp'
+  defaults:
+    _form: '\Drupal\presence_migrate\Form\WPExportUploadForm'
+    _title: 'WP import step 1'
+  requirements:
+    _access: 'TRUE'
+  options:
+    no_cache: 'TRUE'

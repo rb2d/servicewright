@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Manage install and update hooks.
+ */
+
+/**
+ * V1.0.20 - default config updates.
+ */
+function presence_core_update_8009() {
+  // Import feature code.
+  $feature_list = [
+    'presence_core',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+};

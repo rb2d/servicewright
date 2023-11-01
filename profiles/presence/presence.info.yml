@@ -1,0 +1,64 @@
+name: Presence
+type: profile
+core: 8.x
+package: Presence
+distribution:
+  name: Presence
+dependencies:
+  - automated_cron
+  - block
+  - ctools
+  - media
+  - node
+  - search
+  - system
+  - taxonomy
+  - user
+  - views
+themes:
+  - claro
+  - limber
+install:
+  - addanother
+  - admin_toolbar_tools
+  - automated_cron
+  - big_pipe
+  - block
+  - config_update_ui
+  - datetime_range
+  - features_ui
+  - field_group
+  - field_layout
+  - google_fonts_api
+  - inline_entity_form
+  - inline_form_errors
+  - layout_builder_restrictions
+  - node
+  - node_revision_delete
+  - paragraphs_library
+  - presence_core
+  - presence_event
+  - presence_homepage
+  - presence_location
+  - presence_page
+  - presence_program
+  - presence_security
+  - presence_sitebuilder
+  - presence_social
+  - presence_success_story
+  - presence_trainer
+  - presence_user
+  - presence_webform
+  - redis
+  - search
+  - simplei
+  - syslog
+  - system
+  - telephone
+  - timepicker
+  - user
+  - views
+  - views_ui
+version: 8.x-1.0.13
+description: 'The sitewright.io Presence (SWP) distribution. '
+core_incompatible: false

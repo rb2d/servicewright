@@ -1,0 +1,11 @@
+entity.program_schedule.add_form:
+  route_name: entity.program_schedule.add_form
+  title: 'Add a schedule item'
+  appears_on:
+    - entity.program_schedule.collection
+    - view.program_schedule_list.page_1
+entity.pricing.add_form:
+  route_name: entity.pricing.add_form
+  title: 'Add a price option'
+  appears_on:
+    - entity.pricing.collection

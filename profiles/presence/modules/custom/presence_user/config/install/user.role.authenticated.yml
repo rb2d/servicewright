@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies: {  }
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'opt-in or out of google analytics tracking'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'use exclude node title'
+  - 'view media'
+  - 'view paragraph content affiliation_logos'
+  - 'view paragraph content from_library'
+  - 'view paragraph content links'
+  - 'view paragraph content social_links'
+  - 'view published social link group entities'

@@ -1,0 +1,48 @@
+name: 'Presence Program'
+description: 'Provides Program content type and related configuration. Add or edit Programs or services that your facility offers.  You can always disable or edit at any point in time. '
+type: module
+core: 8.x
+dependencies:
+  - allowed_formats
+  - block
+  - entity_reference_exposed_filters
+  - entity_reference_revisions
+  - entityqueue
+  - field
+  - field_group
+  - field_layout
+  - image
+  - interval
+  - language
+  - layout_builder
+  - layout_builder_restrictions
+  - layout_discovery
+  - layout_library
+  - layout_plugin_views
+  - link
+  - media
+  - media_library
+  - menu_ui
+  - node
+  - node_revision_delete
+  - node_title_help_text
+  - options
+  - paragraphs
+  - path
+  - presence_core
+  - presence_program
+  - presence_sitebuilder
+  - presence_user
+  - responsive_image
+  - scheduler
+  - system
+  - taxonomy
+  - text
+  - time_field
+  - user
+  - views
+  - views_list_sort
+  - xy_grid_layouts
+package: Presence
+version: 8.x-1.0.18
+core_incompatible: false

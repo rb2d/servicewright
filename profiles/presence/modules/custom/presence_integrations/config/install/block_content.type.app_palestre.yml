@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: app_palestre
+label: 'Integration - App Palestre'
+revision: 0
+description: 'Block type to be place App Palestre Calendar in layout builder. '

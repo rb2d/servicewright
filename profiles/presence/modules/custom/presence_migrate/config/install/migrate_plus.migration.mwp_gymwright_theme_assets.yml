@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - migrate_source_csv
+id: mwp_gymwright_theme_assets
+migration_tags:
+  - WordPress
+migration_group: mwp
+label: 'Import files from Theme Folder'
+source:
+  plugin: csv
+  path: profiles/presence/modules/custom/presence_migrate/assets/theme-files.csv
+  header_row_count: 1
+  constants:
+      site_url: 'https://www.sitewright.io/wp-content/themes/crossfit/images'
+      file_dest_uri: 'public://wp-theme-images/'
+  keys:
+    - id
+  column_names:
+    0:
+      id: Id
+    1:
+      filename: filename
+process:
+  type:
+    plugin: default_value
+    default_value: wp_theme_images
+  bundle:
+    plugin: default_value
+    default_value: wp_theme_images
+  field_media_image:
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/site_url
+        - filename
+    -
+      plugin: migrate_media_item
+  status:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: entity:media
+migration_dependencies: {}

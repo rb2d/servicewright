@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Manage install and update hooks for the presence_migrate module. SWP-
+ */
+
+/**
+ * v1.0.19 - migrate category fixes.
+ */
+function presence_migrate_update_8002() {
+  $feature_list = [
+    'presence_migrate',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}

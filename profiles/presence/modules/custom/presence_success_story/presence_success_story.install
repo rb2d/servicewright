@@ -1,0 +1,76 @@
+<?php
+
+/**
+ * @file
+ * Updates presence_success_story module.
+ */
+
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\node\Entity\Node;
+
+/**
+ * V1.0.12 - Update allowed formats.
+ */
+function presence_success_story_update_8001() {
+    // Import feature code.
+    $feature_list = [
+        'presence_success_story',
+    ];
+    // See: Drupal [#3017765].
+    $assigner = Drupal::service('features_assigner');
+    $assigner->assignConfigPackages();
+
+    Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * Delete the field_image field from success stories.
+ */
+function presence_success_story_update_8002() {
+
+    // Deleting field.
+    $field_storage = FieldConfig::loadByName('node', 'success_story', 'field_image');
+
+    if (!empty($field_storage)) {
+        // TODO: Implement this.
+        $field_storage->delete();
+    }
+
+}
+
+/**
+ * v1.0.17 - hide ss photo labels.
+ */
+function presence_success_story_update_8003() {
+
+    // Import feature code.
+    $feature_list = [
+        'presence_success_story',
+    ];
+    // See: Drupal [#3017765].
+    $assigner = Drupal::service('features_assigner');
+    $assigner->assignConfigPackages();
+
+    Drupal::service('features.manager')->import($feature_list);
+
+}
+
+/**
+ * Update the entity queue with stories.
+ */
+function presence_success_story_update_8004() {
+    $queues = auto_entityqueue_get_queues_by_type_and_bundle('node', 'success_story');
+    if (!empty($queues[0])) {
+
+        $queue = $queues[0];
+        $nids = \Drupal::entityQuery('node')->condition('type', 'success_story')->execute();
+
+        if (!empty($nids)) {
+            $success_storys = Node::loadMultiple($nids);
+            foreach ($success_storys as $success_story) {
+                auto_entityqueue_add_entity_to_queue($success_story, $queue);
+            }
+        }
+    }
+}

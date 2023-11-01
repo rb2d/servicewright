@@ -1,0 +1,27 @@
+name: 'Presence Event'
+description: 'Provides Event content type and related configuration. Add or edit upcoming Events '
+type: module
+core: 8.x
+dependencies:
+  - address
+  - allowed_formats
+  - datetime_range
+  - field
+  - field_layout
+  - geolocation
+  - language
+  - layout_discovery
+  - menu_ui
+  - node
+  - node_revision_delete
+  - node_title_help_text
+  - path
+  - presence_location
+  - scheduler
+  - text
+  - user
+  - webform
+  - webform_node
+package: Presence
+version: 8.x-1.0.16
+core_incompatible: false

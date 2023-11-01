@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * This contains custom feature of the module.
+ */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function presence_blog_views_pre_render(ViewExecutable $view) {
+
+  if ($view->id() == 'blog_list' && $view->current_display == 'block_1') {
+    $view->exposed_widgets = NULL;
+  }
+}

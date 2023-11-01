@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: trainer_headshot_for_block
+label: 'Trainer headshot for block (75x75)'
+effects:
+  868d231d-80c0-494d-9260-40601f009761:
+    uuid: 868d231d-80c0-494d-9260-40601f009761
+    id: image_resize
+    weight: 1
+    data:
+      width: 75
+      height: 75

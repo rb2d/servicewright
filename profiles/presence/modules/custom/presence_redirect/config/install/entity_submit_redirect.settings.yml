@@ -1,0 +1,17 @@
+pricing:
+  pricing:
+    path: admin/structure/pricing
+program_schedule:
+  program_schedule:
+    path: /admin/content/program_schedule
+global:
+  use_on:
+    - front
+    - backoffice
+node:
+  trainer:
+    path: 'admin/content?title=&type=trainer&status=All&langcode=All'
+  location:
+    path: 'admin/content?title=&type=location&status=All&langcode=All'
+  program:
+    path: 'admin/content?title=&type=program&status=All&langcode=All'

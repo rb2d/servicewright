@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: image_block_background
+label: 'Image Block Background ( H - 576 )'
+effects:
+  d300684d-d851-46eb-8179-477b8ad70e5a:
+    uuid: d300684d-d851-46eb-8179-477b8ad70e5a
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 576
+      upscale: false

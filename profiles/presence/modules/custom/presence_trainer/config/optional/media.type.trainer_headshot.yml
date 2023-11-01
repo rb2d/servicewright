@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies: {  }
+id: trainer_headshot
+label: 'Trainer Headshot'
+description: 'Latest Media Type to handle Trainer''s Headshot'
+source: image
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_image
+field_map: {  }

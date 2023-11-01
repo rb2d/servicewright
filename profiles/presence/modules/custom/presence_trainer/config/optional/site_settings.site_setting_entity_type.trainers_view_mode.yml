@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: trainers_view_mode
+label: 'Trainers View Mode'
+fieldset: 'View Type'
+multiple: false

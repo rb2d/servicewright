@@ -1,0 +1,101 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.pricing.pricing.field_cta_button
+    - field.field.pricing.pricing.field_features
+    - field.field.pricing.pricing.field_individual
+    - field.field.pricing.pricing.field_interval
+    - field.field.pricing.pricing.field_price
+    - field.field.pricing.pricing.field_program
+    - field.field.pricing.pricing.field_terms_count
+    - field.field.pricing.pricing.field_terms_interval
+  module:
+    - field_layout
+    - interval
+    - layout_discovery
+    - link
+    - presence_program
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings:
+      label: ''
+id: pricing.pricing.default
+targetEntityType: pricing
+bundle: pricing
+mode: default
+content:
+  field_cta_button:
+    weight: 6
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_features:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_individual:
+    weight: 7
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_interval:
+    weight: 11
+    settings:
+      allowed_periods: {  }
+    third_party_settings: {  }
+    type: interval_default
+    region: content
+  field_price:
+    weight: 4
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_program:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_terms_count:
+    weight: 9
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_terms_interval:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  user_id: true

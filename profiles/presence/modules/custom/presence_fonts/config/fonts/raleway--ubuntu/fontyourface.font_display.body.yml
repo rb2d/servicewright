@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: body
+label: body
+font_url: 'https://www.google.com/webfonts/family?family=Ubuntu&subset=latin#regular'
+fallback: ''
+selectors: '.fontyourface section p, .fontyourface section div'
+theme: limber

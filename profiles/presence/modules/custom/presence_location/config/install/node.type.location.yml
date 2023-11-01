@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_title_help_text
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+  node_title_help_text:
+    title_help: ''
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+name: Location
+type: location
+description: 'Add or edit facility locations.  These will be displayed throughout the application. '
+help: 'This should be a definitive title for your location if you have multiple locations.  eg. "AcmeFit West" or "AcmeFit East".  If you only have one location, then just type your facility name.'
+new_revision: false
+preview_mode: 1
+display_submitted: false

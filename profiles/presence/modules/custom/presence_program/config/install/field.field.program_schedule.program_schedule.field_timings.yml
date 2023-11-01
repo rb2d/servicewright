@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.program_schedule.field_timings
+  module:
+    - presence_program
+    - time_field
+id: program_schedule.program_schedule.field_timings
+field_name: field_timings
+entity_type: program_schedule
+bundle: program_schedule
+label: Timings
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: time_range

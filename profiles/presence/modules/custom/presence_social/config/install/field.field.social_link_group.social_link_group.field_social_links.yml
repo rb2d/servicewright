@@ -1,0 +1,39 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.social_link_group.field_social_links
+    - paragraphs.paragraphs_type.social_links
+  module:
+    - entity_reference_revisions
+    - presence_social
+id: social_link_group.social_link_group.field_social_links
+field_name: field_social_links
+entity_type: social_link_group
+bundle: social_link_group
+label: 'Social Links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      social_links: social_links
+    target_bundles_drag_drop:
+      affiliation_logos:
+        weight: 5
+        enabled: false
+      from_library:
+        weight: 6
+        enabled: false
+      links:
+        weight: 7
+        enabled: false
+      social_links:
+        enabled: true
+        weight: 8
+field_type: entity_reference_revisions

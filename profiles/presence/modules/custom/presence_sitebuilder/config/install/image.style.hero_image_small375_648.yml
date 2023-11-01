@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_small375_648
+label: 'Hero Image ( small )'
+effects:
+  b229d663-73d5-4db9-bc86-729b971e0237:
+    uuid: b229d663-73d5-4db9-bc86-729b971e0237
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 640
+      height: 648
+      anchor: center-center

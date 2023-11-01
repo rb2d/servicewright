@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_block
+    - field.storage.block_content.field_image_overlay_color
+  module:
+    - options
+id: block_content.image_block.field_image_overlay_color
+field_name: field_image_overlay_color
+entity_type: block_content
+bundle: image_block
+label: 'Solid Color Overlay'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

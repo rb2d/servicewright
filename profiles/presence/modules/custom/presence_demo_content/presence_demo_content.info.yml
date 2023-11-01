@@ -1,0 +1,9 @@
+name: Presence Demo Content
+description: 'Provide Demo Content of type basic page'
+type: module
+core: 8.x
+dependencies:
+  - presence_trainer
+  - layout_builder
+package: Presence
+version: 8.x-1.0

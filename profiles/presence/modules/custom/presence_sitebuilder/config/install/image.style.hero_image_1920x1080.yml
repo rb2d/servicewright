@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_1920x1080
+label: 'Hero Image 1920x1080'
+effects:
+  d2340b53-64a5-46c8-b2f0-697fc0a75335:
+    uuid: d2340b53-64a5-46c8-b2f0-697fc0a75335
+    id: image_scale
+    weight: 2
+    data:
+      width: 1920
+      height: 1080
+      upscale: false

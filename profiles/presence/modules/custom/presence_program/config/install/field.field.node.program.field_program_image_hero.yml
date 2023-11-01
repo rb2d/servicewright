@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_image_hero
+    - media.type.hero_image
+    - node.type.program
+id: node.program.field_program_image_hero
+field_name: field_program_image_hero
+entity_type: node
+bundle: program
+label: 'Program Hero Image'
+description: "This is a image for the program.   \r\nThis image should be in high resolution and will be rejected if it is too small:  \r\n<ol>\r\n<li>Images are best if they are 16:9 ratio.</li>\r\n<li>Minimum size is 960 x 600 pixels</li>\r\n<li>Maximum file size is 10 M</li>\r\n<ol>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      hero_image: hero_image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,12 @@
+bundle: presence
+required:
+  - core.entity_form_display.media.audio.media_library
+  - core.entity_form_display.media.file.media_library
+  - core.entity_form_display.media.image.media_library
+  - core.entity_form_display.media.video.media_library
+  - core.entity_form_display.media.remote_video.media_library
+  - core.entity_view_display.media.audio.media_library
+  - core.entity_view_display.media.file.media_library
+  - core.entity_view_display.media.image.media_library
+  - core.entity_view_display.media.remote_video.media_library
+  - core.entity_view_display.media.video.media_library

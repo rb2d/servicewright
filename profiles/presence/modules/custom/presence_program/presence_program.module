@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file
+ * This contains custom feature of the module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function presence_program_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'pricing_add_form' || $form_id == 'pricing_edit_form') {
+    $form['field_program']['#states'] = [
+      'visible' => [
+        ':input[name="field_individual[value]"]' => ['checked' => TRUE],
+      ],
+    ];
+    $form['field_program']['widget']['#states'] = [
+      'required' => [
+        ':input[name="field_individual[value]"]' => ['checked' => TRUE],
+      ],
+    ];
+    $form['#validate'][] = 'presence_program_pricing_validate';
+  }
+  $form_ids = ['pricing_add_form',
+    'pricing_edit_form',
+    'program_schedule_add_form',
+    'program_schedule_edit_form',
+  ];
+  if (in_array($form_id, $form_ids)) {
+    $form['actions']['addanother'] = [
+      '#attributes' => [
+        'class' => ['button'],
+      ],
+      '#type' => 'submit',
+      '#value' => t('Save and add another'),
+      '#weight' => 50,
+      '#submit' => $form['actions']['submit']['#submit'],
+    ];
+    $form['actions']['addanother']['#submit'][] = 'addanother_custom_submit';
+  }
+}
+
+/**
+ * Submit handler for the 'Save and add another' button.
+ */
+function addanother_custom_submit($form, FormStateInterface &$form_state) {
+  /* @var \Drupal\node\NodeInterface $node  */
+  if ($entity = $form_state->getFormObject()->getEntity()) {
+    $form_state->setRedirect('entity.' . $entity->getEntityType()->id() . '.add_form');
+  }
+}
+
+/**
+ * Custom Validator for node pricing form.
+ *
+ * @param array $form
+ *   Form array (needed to modify the form).
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   Drupal's form state interface.
+ */
+function presence_program_pricing_validate(array &$form, FormStateInterface $form_state) {
+  $field_individual = $form_state->getValue('field_individual');
+  $field_is_internal_value = $form_state->getValue('field_is_internal');
+  if ($field_individual['value'] == 1) {
+    if (empty($form_state->getValue('field_program'))) {
+      $form_state->setErrorByName('field_program', t('Please choose a Program'));
+    }
+  }
+}
+
+/**
+ * Implements hook_contextual_links_view_alter().
+ *
+ * Change Configure Programs Sorting into modal links.
+ */
+function presence_program_contextual_links_view_alter(&$element, $items) {
+  if (isset($element['#links']['entityentity-subqueueedit-form'])) {
+    $element['#links']['entityentity-subqueueedit-form']['attributes'] = [
+      'class' => ['use-ajax'],
+      'data-dialog-type' => 'modal',
+      'data-dialog-options' => '{"width":"80%"}',
+    ];
+  }
+}

@@ -1,0 +1,138 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_banner
+    - field.field.block_content.hero_banner.field_cta_button
+    - field.field.block_content.hero_banner.field_cta_button_color
+    - field.field.block_content.hero_banner.field_cta_button_size
+    - field.field.block_content.hero_banner.field_cta_button_style
+    - field.field.block_content.hero_banner.field_cta_textarea
+    - field.field.block_content.hero_banner.field_hero_image
+    - field.field.block_content.hero_banner.field_hero_tagline
+    - field.field.block_content.hero_banner.field_image_overlay_color
+    - field.field.block_content.hero_banner.field_image_overlay_gradient
+    - field.field.block_content.hero_banner.field_overlay_type
+    - field.field.block_content.hero_banner.field_show_large_logo
+    - field.field.block_content.hero_banner.field_text_alignment
+    - field.field.block_content.hero_banner.field_text_color
+    - field.field.block_content.hero_banner.field_wrapper_alignment
+  module:
+    - link
+    - options
+    - text
+id: block_content.hero_banner.default
+targetEntityType: block_content
+bundle: hero_banner
+mode: default
+content:
+  field_cta_button:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_cta_button_color:
+    weight: 13
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_cta_button_size:
+    weight: 9
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_cta_button_style:
+    weight: 12
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_cta_textarea:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_hero_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_hero_tagline:
+    type: basic_string
+    weight: 6
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_image_overlay_color:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_image_overlay_gradient:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_overlay_type:
+    weight: 11
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_show_large_logo:
+    weight: 2
+    label: hidden
+    settings:
+      format: boolean
+      format_custom_true: ''
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_text_alignment:
+    weight: 7
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_text_color:
+    weight: 8
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_wrapper_alignment:
+    weight: 10
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+hidden:
+  langcode: true

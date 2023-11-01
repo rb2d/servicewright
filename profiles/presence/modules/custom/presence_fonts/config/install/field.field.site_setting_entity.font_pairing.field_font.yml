@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_font
+    - site_settings.site_setting_entity_type.font_pairing
+  module:
+    - options
+id: site_setting_entity.font_pairing.field_font
+field_name: field_font
+entity_type: site_setting_entity
+bundle: font_pairing
+label: Font
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

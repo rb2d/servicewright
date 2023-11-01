@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_1600x900
+label: 'Hero Image 1600x900'
+effects:
+  73838e3e-2ae8-4eea-8d08-4bb2cf30c349:
+    uuid: 73838e3e-2ae8-4eea-8d08-4bb2cf30c349
+    id: image_scale
+    weight: 2
+    data:
+      width: 1600
+      height: 900
+      upscale: false

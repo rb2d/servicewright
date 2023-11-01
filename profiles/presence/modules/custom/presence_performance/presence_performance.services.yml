@@ -1,0 +1,3 @@
+services:
+    presence_performance.default:
+        class: Drupal\presence_performance\DefaultPerformance

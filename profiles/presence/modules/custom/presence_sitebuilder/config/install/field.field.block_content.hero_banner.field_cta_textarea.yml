@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_banner
+    - field.storage.block_content.field_cta_textarea
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    cta_textarea: cta_textarea
+    basic_html: '0'
+    ontraport_script: '0'
+    restricted_html: '0'
+    uplaunch_script: '0'
+    full_html: '0'
+    plain_text: '0'
+id: block_content.hero_banner.field_cta_textarea
+field_name: field_cta_textarea
+entity_type: block_content
+bundle: hero_banner
+label: 'Additional CTA text area'
+description: 'Add additional call to action text that will display below the CTA button.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

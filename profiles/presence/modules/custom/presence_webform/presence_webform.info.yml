@@ -1,0 +1,13 @@
+name: 'Presence Webform'
+description: 'Provides Webform content type and related configuration. A basic page with a webform attached.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - layout_builder
+  - presence_homepage
+  - presence_page
+  - webform
+package: Presence
+version: 8.x-1.0.13
+core_incompatible: false

@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.image_block
+    - field.storage.block_content.field_image_block_tagline
+id: block_content.image_block.field_image_block_tagline
+field_name: field_image_block_tagline
+entity_type: block_content
+bundle: image_block
+label: Tagline
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

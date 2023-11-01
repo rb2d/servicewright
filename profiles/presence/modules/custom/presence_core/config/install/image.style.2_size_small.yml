@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 2_size_small
+label: '2 size small'
+effects:
+  abbe04f2-e66f-4bc4-933a-f51e452dba33:
+    uuid: abbe04f2-e66f-4bc4-933a-f51e452dba33
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 640
+      height: 380
+      anchor: center-center

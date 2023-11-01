@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ext_is_form_block
+    - field.field.block_content.ext_is_form_block.field_ext_infusionsoft_form
+  module:
+    - text
+id: block_content.ext_is_form_block.default
+targetEntityType: block_content
+bundle: ext_is_form_block
+mode: default
+content:
+  field_ext_infusionsoft_form:
+    weight: 0
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden:
+  langcode: true

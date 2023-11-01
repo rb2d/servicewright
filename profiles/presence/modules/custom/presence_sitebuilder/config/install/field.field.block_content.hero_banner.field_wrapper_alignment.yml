@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero_banner
+    - field.storage.block_content.field_wrapper_alignment
+  module:
+    - options
+id: block_content.hero_banner.field_wrapper_alignment
+field_name: field_wrapper_alignment
+entity_type: block_content
+bundle: hero_banner
+label: 'Wrapper Alignment'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'cell medium-offset-3 medium-6 small-12'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

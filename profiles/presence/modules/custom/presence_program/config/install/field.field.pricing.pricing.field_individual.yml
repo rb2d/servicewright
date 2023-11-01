@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.pricing.field_individual
+  module:
+    - presence_program
+id: pricing.pricing.field_individual
+field_name: field_individual
+entity_type: pricing
+bundle: pricing
+label: Individual
+description: 'Check if this pricing entity is an individual pricing entity.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

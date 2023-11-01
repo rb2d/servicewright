@@ -1,0 +1,134 @@
+<?php
+
+/**
+ * @file
+ * This contains custom feature of the module.
+ */
+
+use Drupal\Core\Cache\Cache;
+use Drupal\Core\Entity\ContentEntityInterface;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+
+/**
+ * HOOK_page_attachments.
+ */
+function presence_core_page_attachments(array &$page) {
+  $page['#attached']['library'][] = 'presence_core/icon';
+
+  $user = User::load(\Drupal::currentUser()->id());
+  $allowed_roles = [
+    'site_builder',
+    'facility_marketer',
+    'facility_manager',
+    'administrator',
+  ];
+  $roles = $user->getRoles();
+  $role_exist = array_intersect($allowed_roles, $roles);
+  $active_theme = \Drupal::service('theme.manager')->getActiveTheme()->getName();
+  $config = \Drupal::config('system.theme');
+  $admin_theme = $config->get('admin');
+  if (count($role_exist) && $active_theme == $admin_theme) {
+    $page['#attached']['library'][] = 'presence_core/intercom';
+    $email = $user->getEmail();
+    $created = $user->getCreatedTime();
+    $name = $user->get('name')->value;
+    $page['#attached']['library'][] = 'presence_core/intercom';
+    $page['#attached']['drupalSettings']['intercom']['name'] = $name;
+    $page['#attached']['drupalSettings']['intercom']['email'] = $email;
+    $page['#attached']['drupalSettings']['intercom']['created'] = $created;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function presence_core_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'site_setting_entity_call_to_actions_edit_form' || $form_id == 'site_setting_entity_call_to_actions_form') {
+    $form['field_primary_cta']['widget'][0]['uri']['#description'] = t('Enter a valid URL: eg. https://www.sitewright.io or /blog. For clickable telephone numbers you can use the following: tel:111.222.3333');
+    $form['field_primary_cta']['widget'][0]['title']['#maxlength'] = 22;
+    $form['field_secondary_cta']['widget'][0]['uri']['#description'] = t('Enter a valid URL: eg. https://www.sitewright.io or /blog. For clickable telephone numbers you can use the following: tel:111.222.3333');
+    $form['field_secondary_cta']['widget'][0]['title']['#maxlength'] = 22;
+    $form['actions']['submit']['#submit'][] = 'cta_site_settings_goto';
+    $form['#attached']['library'][] = 'presence_core/counter';
+  }
+
+  if ($form_id == 'block_content_hero_banner_edit_form' || $form_id == 'block_content_hero_banner_form') {
+    $form['field_hero_tagline']['widget'][0]['value']['#attributes']['maxlength'] = 44;
+    $form['#attached']['library'][] = 'presence_core/counter';
+  }
+
+  if ($form_id == 'site_setting_entity_site_name_form' || $form_id == 'site_setting_entity_site_name_edit_form') {
+    $form['#attached']['library'][] = 'presence_core/counter';
+    $form['actions']['submit']['#submit'][] = 'sitename_site_settings_goto';
+  }
+
+}
+
+/**
+ * Clear cache on form submission.
+ */
+function cta_site_settings_goto($form, FormStateInterface $form_state) {
+  $tags = ['block:cta_global'];
+  Cache::invalidateTags($tags);
+}
+
+
+
+/**
+ * Clear cache on form submission.
+ */
+function sitename_site_settings_goto($form, FormStateInterface $form_state) {
+  $name = $form_state->getValue('field_site_name')[0]['value'];
+  $config = \Drupal::service('config.factory')->getEditable('system.site');
+  $config->set('name', $name);
+  $config->save();
+}
+
+/**
+ * Gradient options.
+ */
+function gradient_options(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+
+  $options = [];
+  $colors = ['blk', 'wht'];
+  $directions = ['toright', 'toleft', 'tobottom', 'totop'];
+  $opacities = ['25', '50', '75'];
+
+  foreach ($colors as $color) {
+    foreach ($directions as $direction) {
+      foreach ($opacities as $opacity) {
+        $class = 'overlay-grad-' . $color . '-op' . $opacity . '-' . $direction;
+        $options[$class] = $class;
+      }
+    }
+  }
+  return $options;
+}
+
+/**
+ * Solid color options.
+ */
+function solid_color_options(FieldStorageConfig $definition, ContentEntityInterface $entity = NULL, $cacheable) {
+
+  $options = [];
+  $colors = ['primary', 'blk', 'wht'];
+  $opacities = ['25', '50', '75'];
+
+  foreach ($colors as $color) {
+    foreach ($opacities as $opacity) {
+      $class = 'overlay-solid-' . $color . '-op' . $opacity;
+      $options[$class] = $class;
+    }
+  }
+  return $options;
+}
+
+/**
+ * Custom miscellaneous function.
+ */
+function presence_core_tweaks() {
+  $config_factory = \Drupal::configFactory();
+  $config_factory->getEditable('node.settings')->set('use_admin_theme', 'true')->save();
+}

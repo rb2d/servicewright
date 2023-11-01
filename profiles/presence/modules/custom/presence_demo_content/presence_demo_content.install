@@ -1,0 +1,333 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the presence_demo_content.
+ */
+
+use Drupal\pathauto\PathautoState;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Plugin\Context\Context;
+use Drupal\Core\Plugin\Context\ContextDefinition;
+use Drupal\Core\Plugin\Context\EntityContext;
+use Drupal\layout_builder\Section;
+use Drupal\menu_link_content\Entity\MenuLinkContent;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_install().
+ *
+ * Creating Node of Type Basic page.
+ *
+ * @see system_install()
+ */
+function presence_demo_content_install() {
+  // Create homepage with default layout.
+  $homepage_exist = \Drupal::service('path.alias_storage')->aliasExists('/home', 'en');
+  if ($homepage_exist == FALSE) {
+    $node = Node::create([
+      'type' => 'homepage',
+      'title' => 'Homepage',
+    ]);
+    $path = [
+      'alias' => '/home',
+      'pathauto' => PathautoState::SKIP,
+    ];
+    $node->set('uid', 1);
+    $node->set('path', $path);
+    $node->save();
+  }
+  $config = \Drupal::configFactory()->getEditable('system.site');
+  $config->set('page.front', '/home')->save();
+
+  $trainer_page_exist = TRUE;
+
+  $urls = ['/about/training-staff', '/about/meet-the-coaches', '/training-staff'];
+  foreach ($urls as $url) {
+    $exists = \Drupal::service('path.alias_storage')->aliasExists($url, 'en');
+    if ($exists == FALSE) {
+      $trainer_page_exist = FALSE;
+    }
+  }
+  // Create trainers page with default layout and block placement.
+  if ($trainer_page_exist == FALSE) {
+    $node = Node::create([
+      'type' => 'page',
+      'title' => 'Trainers',
+    ]);
+    $path = [
+      'alias' => '/training-staff',
+      'pathauto' => PathautoState::SKIP,
+    ];
+    $node->set('uid', 1);
+    $node->set('path', $path);
+    $node->save();
+
+    $menu_link = MenuLinkContent::create([
+      'title' => 'Trainers',
+      'link' => ['uri' => 'internal:/node/' . $node->id()],
+      'menu_name' => 'main',
+      'expanded' => TRUE,
+    ]);
+    $menu_link->save();
+
+    /** @var \Drupal\layout_builder\SectionStorage\SectionStorageManagerInterface $section_storage_manager */
+    $section_storage_manager = \Drupal::service('plugin.manager.layout_builder.section_storage');
+    $section_storage = $section_storage_manager->load('overrides', [
+      'entity' => EntityContext::fromEntity($node),
+      'view_mode' => new Context(new ContextDefinition('string'), 'default'),
+    ]);
+
+    // Puts the new section at the top. Can use any delta, or swap
+    // insertSection() for appendSection() to put at the end.
+    $section_storage->insertSection(0, Section::fromArray([
+      'layout_id' => 'xy-grid-12',
+      'layout_settings' => [
+        'wrappers' => ['main' => 'div'],
+        'grid' => [
+          'type' => 'grid-x',
+          'classes' => '',
+          'id' => '',
+        ],
+        'grid_container' => [
+          'type' => '',
+          'classes' => '',
+          'id' => '',
+        ],
+        'breakpoint' => 'medium',
+      ],
+      'components' => [
+        [
+          'uuid' => \Drupal::service('uuid')->generate(),
+          'region' => 'main',
+          'configuration' => [
+            'id' => 'trainer_list',
+            'provider' => 'presence_trainer',
+            'label' => 'Trainer list',
+            'label_display' => 0,
+            'context_mapping' => [],
+          ],
+          'weight' => 0,
+          'additional' => [],
+        ],
+      ],
+    ]));
+    $section_storage->save();
+  }
+
+  create_demo_taxonomies();
+  _presence_demo_content_blog_list();
+}
+
+
+/**
+ * Create default taxonomies.
+ */
+function create_demo_taxonomies() {
+  $categories = [
+    "Coaches Corner",
+    "Daily WOD",
+    "Events",
+    "Featured Athlete",
+    "General",
+    "Gym News",
+    "Healthy Recipes",
+    "Nutrition",
+    "Testimonials",
+    "Training Tips",
+  ];
+  foreach ($categories as $category) {
+    // code...
+    $exist = get_tid_by_name($category, 'categories');
+    if ($exist == 0) {
+      $new_term = Term::create([
+        'vid' => 'categories',
+        'name' => $category,
+      ]);
+      $new_term->enforceIsNew();
+      $new_term->save();
+    }
+  }
+}
+
+/**
+ * Get term id by name.
+ */
+function get_tid_by_name($name = NULL, $vid = NULL) {
+  $properties = [];
+  if (!empty($name)) {
+    $properties['name'] = $name;
+  }
+  if (!empty($vid)) {
+    $properties['vid'] = $vid;
+  }
+  $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+  $term = reset($terms);
+
+  return !empty($term) ? $term->id() : 0;
+}
+
+/**
+ * Create blog list page.
+ */
+function _presence_demo_content_blog_list() {
+  $blog_list_exist = \Drupal::service('path.alias_storage')->aliasExists('/blog', 'en');
+  if ($blog_list_exist == FALSE) {
+    $node = Node::create([
+      'type' => 'list_page',
+      'title' => 'Blog',
+    ]);
+    $path = [
+      'alias' => '/blog',
+      'pathauto' => PathautoState::SKIP,
+    ];
+    $node->set('uid', 1);
+    $node->set('path', $path);
+    $node->save();
+  }
+
+  $menu_link = MenuLinkContent::create([
+    'title' => 'Blog',
+    'link' => ['uri' => 'internal:/blog'],
+    'menu_name' => 'main',
+    'weight' => '50',
+    'expanded' => FALSE,
+  ]);
+  $menu_link->save();
+
+  $section_storage_manager = \Drupal::service('plugin.manager.layout_builder.section_storage');
+  $section_storage = $section_storage_manager->load('overrides', [
+    'entity' => EntityContext::fromEntity($node),
+    'view_mode' => new Context(new ContextDefinition('string'), 'default'),
+  ]);
+
+  // Puts the new section at the top. Can use any delta, or swap
+  // insertSection() for appendSection() to put at the end.
+  $section_storage->insertSection(0, Section::fromArray([
+    'layout_id' => 'xy-grid-12',
+    'layout_settings' => [
+      'wrappers' => ['main' => 'div'],
+      'grid' => [
+        'type' => 'grid-x',
+        'classes' => '',
+        'id' => '',
+      ],
+      'grid_container' => [
+        'type' => '',
+        'classes' => '',
+        'id' => '',
+      ],
+      'breakpoint' => 'medium',
+    ],
+    'components' => [
+      [
+        'uuid' => \Drupal::service('uuid')->generate(),
+        'region' => 'main',
+        'configuration' => [
+          'id' => 'system_breadcrumb_block',
+          'provider' => 'system',
+          'label' => [],
+          'label_display' => 0,
+          'context_mapping' => [],
+        ],
+        'weight' => 0,
+        'additional' => [],
+      ],
+    ],
+  ]));
+  $section_storage->insertSection(1, Section::fromArray([
+    'layout_id' => 'blog-list-page',
+    'layout_settings' => [
+      'wrappers' => ['sidebar_left' => 'div', 'sidebar_right' => 'div'],
+      'grid' => [
+        'type' => 'grid-x',
+        'classes' => 'grid-margin-x',
+        'id' => '',
+      ],
+      'grid_container' => [
+        'type' => '',
+        'classes' => '',
+        'id' => '',
+      ],
+      'breakpoint' => 'medium',
+    ],
+    'components' => [
+      [
+        'uuid' => \Drupal::service('uuid')->generate(),
+        'region' => 'sidebar_left',
+        'configuration' => [
+          'id' => 'views_block:blog_list-block_1',
+          'provider' => 'views',
+          'label' => 'Blogs',
+          'label_display' => 0,
+          'context_mapping' => [],
+        ],
+        'weight' => 0,
+        'additional' => [],
+      ],
+      [
+        'uuid' => \Drupal::service('uuid')->generate(),
+        'region' => 'sidebar_right',
+        'configuration' => [
+          'id' => 'search_form_block',
+          'provider' => 'search',
+          'label' => 'Search',
+          'label_display' => 1,
+          'context_mapping' => [],
+        ],
+        'weight' => 0,
+        'additional' => [],
+      ],
+      [
+        'uuid' => \Drupal::service('uuid')->generate(),
+        'region' => 'sidebar_right',
+        'configuration' => [
+          'id' => 'views_block:blog_categories-block_1',
+          'provider' => 'views',
+          'label' => 'Categories',
+          'label_display' => 1,
+          'context_mapping' => [],
+        ],
+        'weight' => 1,
+        'additional' => [],
+      ],
+
+    ],
+  ]));
+  $section_storage->save();
+}
+
+/**
+ * Update existing content with default values if has not  been already set.
+ */
+function presence_demo_content_update_8001() {
+  create_demo_taxonomies();
+}
+
+/**
+ * V1.0.12 - replace /blog page with new default layout.
+ */
+function presence_demo_content_update_8002() {
+  // Check the path is valid before proceeding.
+  $pathIsValid = \Drupal::pathValidator()->isValid('/blog');
+  if ($pathIsValid) {
+    $alias = \Drupal::service('path.alias_manager')->getPathByAlias('/blog');
+    $params = Url::fromUri("internal:" . $alias)->getRouteParameters();
+    $entity_type = key($params);
+    $nodeObj = \Drupal::entityTypeManager()->getStorage($entity_type)->load($params[$entity_type]);
+
+    // Get nid.
+    $nid = $nodeObj->nid->value;
+    $node = Node::load($nid);
+
+    // Check if node exists with the given nid.
+    if ($node) {
+      $node->delete();
+    }
+  }
+
+  // Then add back the default blog page.
+  _presence_demo_content_blog_list();
+
+}

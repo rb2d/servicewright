@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * This contains custom feature of the module.
+ */
+
+/**
+ * Implements template_preprocess_field().
+ */
+function presence_homepage_preprocess_field(&$variables, $hook) {
+  $element = $variables['element'];
+  if ($element['#field_name'] == 'field_cta_button') {
+    $variables['items'][0]['content']['#options']['attributes']['class'][] = 'button';
+  }
+}

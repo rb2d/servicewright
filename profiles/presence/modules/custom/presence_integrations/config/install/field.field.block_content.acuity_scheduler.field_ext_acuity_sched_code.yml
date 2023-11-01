@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.acuity_scheduler
+    - field.storage.block_content.field_ext_acuity_sched_code
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    acuity_scheduler_script: acuity_scheduler_script
+    activecampaign_script: '0'
+    basic_html: '0'
+    cta_textarea: '0'
+    mindbody_script: '0'
+    ontraport_script: '0'
+    restricted_html: '0'
+    uplaunch_script: '0'
+    full_html: '0'
+    plain_text: '0'
+id: block_content.acuity_scheduler.field_ext_acuity_sched_code
+field_name: field_ext_acuity_sched_code
+entity_type: block_content
+bundle: acuity_scheduler
+label: 'Schedule code'
+description: 'Paste your schedule code here'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

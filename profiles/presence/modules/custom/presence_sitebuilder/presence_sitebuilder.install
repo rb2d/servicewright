@@ -1,0 +1,380 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the presence_sitebuilder module.
+ */
+
+/**
+ * Install scheduler module. Per SWP-317.
+ */
+function presence_sitebuilder_update_8001() {
+  \Drupal::service('module_installer')->install(['scheduler'], TRUE);
+};
+
+/**
+ * Installs presence_fonts.
+ */
+function presence_sitebuilder_update_8003() {
+  \Drupal::service('module_installer')->install(['presence_fonts'], TRUE);
+};
+
+/**
+ * Fixes image block tagline alignment.
+ */
+function presence_sitebuilder_update_8004() {
+  // Truncate db table.
+  \Drupal::database()->truncate('block_content__field_tagline_alignment')->execute();
+  \Drupal::database()->truncate('block_content_revision__field_tagline_alignment')->execute();
+
+  // Import feature.
+  $feature_list = ['presence_sitebuilder'];
+  \Drupal::service('features.manager')->import($feature_list);
+  // Return message.
+  return t('we have updated the text alignments for image blocks to use special classes');
+}
+
+/**
+ * Installs simple_menu_permissions.
+ */
+function presence_sitebuilder_update_8005() {
+  // Installs modules.
+  \Drupal::service('module_installer')->install(['simple_menu_permissions'], TRUE);
+  \Drupal::service('module_installer')->install(['presence_menu'], TRUE);
+
+  // Imports features related to menu permissions/.
+  $feature_list = [];
+  $feature_list = [
+    'presence_sitebuilder',
+    'presence_menu',
+    'presence_user',
+    'presence_program',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+}
+
+/**
+ * Installs paragraph_type_permissions.
+ */
+function presence_sitebuilder_update_8006() {
+  \Drupal::service('module_installer')->install(['paragraphs_type_permissions'], TRUE);
+  $feature_list = [
+    'presence_sitebuilder',
+    'presence_user',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};
+
+/**
+ * V0.0.9-RC9 Install presence_social and responsive_background_image.
+ */
+function presence_sitebuilder_update_8007() {
+  \Drupal::service('module_installer')->install(['presence_social'], TRUE);
+  \Drupal::service('module_installer')->install(['responsive_background_image'], TRUE);
+
+  // Feature config import.
+  $feature_list = [
+    'presence_sitebuilder',
+    'presence_success_story',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};
+
+/**
+ * V0.0.9-RC10 feature imports dependencies and installs layout_plugin_views.
+ */
+function presence_sitebuilder_update_8008() {
+
+  \Drupal::service('module_installer')->install(['layout_plugin_views'], TRUE);
+
+  // Feature config import.
+  $feature_list = [
+    'presence_core',
+    'presence_sitebuilder',
+    'presence_page',
+    'presence_location',
+    'presence_program',
+    'presence_success_story',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V0.0.9-RC11 install remote video block.
+ */
+function presence_sitebuilder_update_8009() {
+
+  $feature_list = [
+    'presence_sitebuilder',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};
+
+/**
+ * V0.0.9-RC12 - install presence_list_page , import block tweaks configuration.
+ */
+function presence_sitebuilder_update_8010() {
+  // Install presence_list_page.
+  \Drupal::service('module_installer')->install(['presence_list_page'], TRUE);
+
+  // Import feature code.
+  $feature_list = [
+    'presence_sitebuilder',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};
+
+/**
+ * V0.0.9-RC14 - text formatters updated to support target attribute.
+ */
+function presence_sitebuilder_update_8011() {
+
+  // Import feature code.
+  $feature_list = [
+    'presence_sitebuilder',
+    'presence_list_page',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+};
+
+/**
+ * V0.0.9-RC16 - install presence_color. import media display.
+ */
+function presence_sitebuilder_update_8012() {
+
+  // Import feature code.
+  $feature_list = [
+    'presence_sitebuilder',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+
+  // Install presence_color.
+  \Drupal::service('module_installer')->install(['presence_color'], TRUE);
+
+};
+
+/**
+ * V1.0.11.
+ * - Install presence_integrations.
+ * - Install button hollow effect.
+ * - Page title visibility update.
+ * -- Uninstall exclude_node_title.
+ */
+function presence_sitebuilder_update_8013() {
+
+  // Import feature code.
+  $feature_list = [
+    'presence_sitebuilder',
+    'presence_page',
+    'presence_blog',
+    'presence_list_page',
+    'presence_homepage',
+    'presence_integrations',
+  ];
+  // See: Drupal [#3017765].
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+
+  \Drupal::service('features.manager')->import($feature_list);
+
+  // Install modules.
+  \Drupal::service('module_installer')->install(['presence_integrations'], TRUE);
+  \Drupal::service('module_installer')->install(['allowed_formats'], TRUE);
+
+  // Uninstall exclude_node_title.
+  \Drupal::service('module_installer')->uninstall(['exclude_node_title']);
+}
+
+/**
+ * V1.0.11 - hotfix-10 - fixed faulty html formatter.
+ */
+function presence_sitebuilder_update_8016() {
+
+  // Install modules.
+  \Drupal::service('module_installer')->install(['rebuild_cache_access'], TRUE);
+
+  // Import feature code.
+  $feature_list = [
+    'presence_sitebuilder',
+    'presence_user',
+  ];
+  // See: Drupal [#3017765].
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V1.0.12 - update allowed formats.
+ */
+function presence_sitebuilder_update_8017() {
+
+  // Import feature code.
+  $feature_list = [
+    'presence_sitebuilder',
+  ];
+  // See: Drupal [#3017765].
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * V1.0.15 - install presence_performance. Import config.
+ */
+function presence_sitebuilder_update_8018() {
+  // Install presence_performance.
+  \Drupal::service('module_installer')->install(['presence_performance'], TRUE);
+}
+
+/**
+ * V1.0.15-hotifx3 - integrations block title disable.
+ */
+function presence_sitebuilder_update_8019() {
+  // Import feature code.
+  $feature_list = [
+    'presence_sitebuilder',
+  ];
+  // See: Drupal [#3017765].
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * v1.0.16 - Node revision delete installed.  Integration configuration fix.
+ */
+
+function presence_sitebuilder_update_8020() {
+  // Install node_revision_delete.
+  \Drupal::service('module_installer')->install(['node_revision_delete'], TRUE);
+
+  // Import feature code.
+  $feature_list = [
+    'presence_core',
+    'presence_blog',
+    'presence_event',
+    'presence_homepage',
+    'presence_integrations',
+    'presence_list_page',
+    'presence_location',
+    'presence_page',
+    'presence_program',
+    'presence_sitebuilder',
+    'presence_success_story',
+    'presence_social',
+    'presence_trainer'
+  ];
+  // See: Drupal [#3017765].
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+
+  \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * v1.0.19 - Media embed defaults.
+ */
+
+function presence_sitebuilder_update_8022() {
+
+    // remove configs before import.
+    // Using \Drupal::configFactory()
+    \Drupal::configFactory()->getEditable('field.storage.block_content.field_cta_button_style')->delete();
+
+    // Import feature code.
+    $feature_list = [
+        'presence_sitebuilder',
+    ];
+    // See: Drupal [#3017765].
+    $assigner = \Drupal::service('features_assigner');
+    $assigner->assignConfigPackages();
+
+    \Drupal::service('features.manager')->import($feature_list);
+}
+
+
+/**
+ * v1.0.20 - enable presence_layout.
+ */
+
+function presence_sitebuilder_update_8023() {
+    // Enable presence_layout.
+    \Drupal::service('module_installer')->install(['presence_layout'], TRUE);
+
+    // Import feature code.
+    $feature_list = [
+        'presence_sitebuilder',
+    ];
+    // See: Drupal [#3017765].
+    $assigner = \Drupal::service('features_assigner');
+    $assigner->assignConfigPackages();
+
+    \Drupal::service('features.manager')->import($feature_list);
+}
+
+/**
+ * Implements hook_udpate_dependencies().
+ */
+
+/**
+ * Implements hook_update_dependencies().
+ */
+function presence_sitebuilder_update_dependencies() {
+    // SWP-517
+    $dependencies['presence_homepage'][8001] = array(
+        'presence_sitebuilder' => '8023',
+    );
+
+    // SWP-517
+    $dependencies['presence_page'][8003] = array(
+        'presence_sitebuilder' => '8023',
+    );
+
+    // SWP-517
+    $dependencies['presence_list_page'][8003] = array(
+        'presence_sitebuilder' => '8023',
+    );
+
+    // SWP-517
+    $dependencies['presence_core'][8009] = array(
+        'presence_sitebuilder' => '8023',
+    );
+
+
+
+    return $dependencies;
+}

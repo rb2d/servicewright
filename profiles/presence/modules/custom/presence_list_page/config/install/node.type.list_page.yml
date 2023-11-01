@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - node_revision_delete
+    - node_title_help_text
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  node_title_help_text:
+    title_help: 'This title will be displayed by default. '
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: false
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: false
+    unpublish_enable: false
+    unpublish_required: false
+    unpublish_revision: false
+  node_revision_delete:
+    minimum_revisions_to_keep: 3
+    minimum_age_to_delete: 2
+    when_to_delete: 0
+name: 'List page'
+type: list_page
+description: 'Create a page that will list content.  Use layout builder to choose which list you would like added. '
+help: 'Create a title and some body text.  Then navigate to layout builder to add the list(s) you would like displayed.'
+new_revision: true
+preview_mode: 1
+display_submitted: false

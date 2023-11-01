@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.site_setting_entity.call_to_actions.field_primary_cta
+    - field.field.site_setting_entity.call_to_actions.field_secondary_cta
+    - site_settings.site_setting_entity_type.call_to_actions
+  module:
+    - link
+id: site_setting_entity.call_to_actions.default
+targetEntityType: site_setting_entity
+bundle: call_to_actions
+mode: default
+content:
+  field_primary_cta:
+    weight: 0
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_secondary_cta:
+    type: link
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+hidden:
+  fieldset: true
+  name: true
+  user_id: true

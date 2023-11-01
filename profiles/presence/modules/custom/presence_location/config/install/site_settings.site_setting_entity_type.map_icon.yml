@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: map_icon
+label: 'Map Icon'
+fieldset: 'Map Icon'
+multiple: false

@@ -1,0 +1,10 @@
+bundle: presence
+required:
+  - user.role.anonymous
+  - user.role.authenticated
+  - user.role.administrator
+  - user.role.facility_manager
+  - user.role.facility_marketer
+  - user.role.site_builder
+  - user.role.facility_member
+  - user.role.facility_trainer

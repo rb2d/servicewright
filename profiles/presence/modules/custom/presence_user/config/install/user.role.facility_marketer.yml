@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies: {  }
+id: facility_marketer
+label: 'Facility marketer'
+weight: 5
+is_admin: null
+permissions:
+  - 'add social link group entities'
+  - 'create paragraph content affiliation_logos'
+  - 'create paragraph content links'
+  - 'create paragraph content social_links'
+  - 'delete paragraph content affiliation_logos'
+  - 'delete paragraph content links'
+  - 'delete paragraph content social_links'
+  - 'delete social link group entities'
+  - 'edit social link group entities'
+  - 'schedule publishing of nodes'
+  - 'update paragraph content affiliation_logos'
+  - 'update paragraph content links'
+  - 'update paragraph content social_links'
+  - 'use exclude node title'
+  - 'use text format activecampaign_script'
+  - 'use text format acuity_scheduler_script'
+  - 'use text format basic_html'
+  - 'use text format cta_textarea'
+  - 'use text format infusionsoft_filter'
+  - 'use text format mindbody_script'
+  - 'use text format ontraport_script'
+  - 'use text format restricted_html'
+  - 'use text format uplaunch_script'
+  - 'view scheduled content'
+  - 'view unpublished social link group entities'

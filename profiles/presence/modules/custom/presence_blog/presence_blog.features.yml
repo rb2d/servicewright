@@ -1,0 +1,5 @@
+bundle: presence
+required:
+  - tvi.settings
+  - tvi.taxonomy_vocabulary.categories
+  - pathauto.pattern.category_term

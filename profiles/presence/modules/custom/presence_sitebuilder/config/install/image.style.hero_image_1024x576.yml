@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: hero_image_1024x576
+label: 'Hero Image 1024x576'
+effects:
+  ac6ce18f-c154-4913-bb1f-16fe24f49f78:
+    uuid: ac6ce18f-c154-4913-bb1f-16fe24f49f78
+    id: image_scale
+    weight: 2
+    data:
+      width: 1024
+      height: 576
+      upscale: false

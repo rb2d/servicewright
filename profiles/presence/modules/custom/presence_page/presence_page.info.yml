@@ -1,0 +1,31 @@
+name: 'Presence Basic Page'
+description: "Provides Basic page content type and related configuration. \r\nUse <em>basic pages</em> for your static content, such as an 'About us' page."
+type: module
+core: 8.x
+dependencies:
+  - allowed_formats
+  - captcha
+  - field
+  - field_layout
+  - language
+  - layout_builder
+  - layout_builder_restrictions
+  - layout_discovery
+  - layout_library
+  - menu_ui
+  - migrate_plus
+  - node
+  - node_revision_delete
+  - node_title_help_text
+  - path
+  - presence_core
+  - presence_homepage
+  - presence_sitebuilder
+  - rdf
+  - scheduler
+  - text
+  - user
+  - xy_grid_layouts
+package: Presence
+version: 8.x-1.0.20
+core_incompatible: false

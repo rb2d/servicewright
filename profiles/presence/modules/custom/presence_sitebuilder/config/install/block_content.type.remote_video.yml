@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: remote_video
+label: 'Remote Video'
+revision: 0
+description: 'Use this to add/edit and delete a remote video block.'

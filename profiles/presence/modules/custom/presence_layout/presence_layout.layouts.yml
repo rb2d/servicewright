@@ -1,0 +1,10 @@
+swp-xy-grid-12:
+  label: 'SWP Grid One Column: 12'
+  category: 'XY Grid Layouts'
+  template: 'templates/swp-xy-grid-12'
+  class: '\Drupal\presence_layout\Plugin\Layout\PresenceLayout'
+  icon_map:
+    - [main]
+  regions:
+    main:
+      label: 'Main content'

@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_logo_large
+    - media.type.logo_large
+    - site_settings.site_setting_entity_type.logos
+id: site_setting_entity.logos.field_logo_large
+field_name: field_logo_large
+entity_type: site_setting_entity
+bundle: logos
+label: 'Logo Large'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      logo_large: logo_large
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

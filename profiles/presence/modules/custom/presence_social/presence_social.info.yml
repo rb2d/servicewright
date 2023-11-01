@@ -1,0 +1,28 @@
+name: 'Presence Social'
+description: 'Social links and social media configuration'
+type: module
+core: 8.x
+version: 8.x-1.0.16
+package: Presence
+core_incompatible: false
+dependencies:
+  - address
+  - entity_reference_revisions
+  - field
+  - field_layout
+  - geolocation
+  - image
+  - inline_entity_form
+  - layout_builder
+  - layout_discovery
+  - link
+  - node
+  - options
+  - paragraphs
+  - path
+  - presence_location
+  - presence_social
+  - scheduler
+  - telephone
+  - text
+  - user

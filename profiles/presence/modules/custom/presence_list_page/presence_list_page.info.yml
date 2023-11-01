@@ -1,0 +1,30 @@
+name: 'Presence List page'
+description: 'A content type designed for list pages. eg. blogs and event lists.'
+type: module
+core: 8.x
+dependencies:
+  - allowed_formats
+  - field
+  - field_layout
+  - language
+  - layout_builder
+  - layout_builder_restrictions
+  - layout_discovery
+  - layout_library
+  - menu_ui
+  - node
+  - node_revision_delete
+  - node_title_help_text
+  - path
+  - presence_core
+  - presence_homepage
+  - presence_layout
+  - presence_page
+  - scheduler
+  - system
+  - text
+  - user
+  - xy_grid_layouts
+version: 8.x-1.0.20
+package: Presence
+core_incompatible: false

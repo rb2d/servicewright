@@ -1,0 +1,29 @@
+
+# Program schedule menu items definition
+
+program_schedule.admin.structure.settings:
+  description: 'Configure Program schedule entities'
+  parent: system.admin_structure
+  route_name: program_schedule.settings
+  title: 'Program schedule settings'
+
+program_schedule.admin.list:
+  description: 'Create and modify your program schedule.'
+  parent: system.admin_content
+  route_name: view.program_schedule_list.page_1
+  title: 'Program Schedule'
+  weight: 10
+
+# Pricing menu items definition
+entity.pricing.collection:
+  description: 'List Pricing entities'
+  parent: system.admin_structure
+  route_name: entity.pricing.collection
+  title: 'Pricing list'
+  weight: 100
+
+pricing.admin.structure.settings:
+  description: 'Configure Pricing entities'
+  parent: system.admin_structure
+  route_name: pricing.settings
+  title: 'Pricing settings'

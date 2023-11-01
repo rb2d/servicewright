@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.triib_calendar
+    - field.storage.block_content.field_triib_schedule_link
+id: block_content.triib_calendar.field_triib_schedule_link
+field_name: field_triib_schedule_link
+entity_type: block_content
+bundle: triib_calendar
+label: 'Schedule link'
+description: 'For help finding your Triib Calendar link goto <a href="https://support.triib.com/hc/en-us/articles/115004509307-How-do-I-embed-my-schedule-" target="_blank" title="support link ''https://support.triib.com/hc/en-us/articles/115004509307-How-do-I-embed-my-schedule-''"> support.triib.com</a>'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

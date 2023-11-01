@@ -1,0 +1,9 @@
+enabled_fonts:
+  - 'https://www.google.com/webfonts/family?family=Oswald&subset=latin#700'
+  - 'https://www.google.com/webfonts/family?family=Noto Serif&subset=latin#regular'
+load_all_enabled_fonts: 1
+dependencies:
+  module:
+    - fontyourface
+_core:
+  default_config_hash: VFARUiyAb_ZpoNS4f3rHcN6oMZyIjMyr2cfbY99tiMo

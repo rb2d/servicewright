@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: links
+label: Links
+icon_uuid: null
+description: 'Add / edit links'
+behavior_plugins: {  }

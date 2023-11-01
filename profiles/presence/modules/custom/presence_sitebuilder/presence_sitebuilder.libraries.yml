@@ -1,0 +1,4 @@
+image_overlay:
+  css:
+    layout:
+      css/overlay-preset.css: {}

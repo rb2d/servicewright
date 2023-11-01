@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_enable_ontraport
+    - site_settings.site_setting_entity_type.integrations
+id: site_setting_entity.integrations.field_enable_ontraport
+field_name: field_enable_ontraport
+entity_type: site_setting_entity
+bundle: integrations
+label: 'Enable Ontraport integration'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

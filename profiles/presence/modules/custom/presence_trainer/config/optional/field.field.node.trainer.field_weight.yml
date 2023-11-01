@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.trainer
+  module:
+    - weight
+id: node.trainer.field_weight
+field_name: field_weight
+entity_type: node
+bundle: trainer
+label: 'Order Weight'
+description: 'This field is used to calculate the Display order of the Trainer profiles, you can manually select the weight here or use the content admin screen to adjust the order.. Note: the lighter the number the higher in display order will be. Negative numbers are light, positive numbers are heavy'
+required: false
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings:
+  range: '20'
+field_type: weight

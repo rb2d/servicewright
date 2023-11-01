@@ -1,0 +1,9 @@
+bundle: presence
+required:
+  - core.entity_form_display.site_setting_entity.map_icon.default
+  - core.entity_view_display.site_setting_entity.map_icon.default
+  - field.field.site_setting_entity.map_icon.field_map_icon
+  - field.storage.site_setting_entity.field_map_icon
+  - site_settings.site_setting_entity_type.map_icon
+  - image.style.map_pin
+  - block.block.views_block__location_view_block_1

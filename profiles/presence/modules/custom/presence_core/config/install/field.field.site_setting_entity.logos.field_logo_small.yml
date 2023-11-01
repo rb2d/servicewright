@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_logo_small
+    - media.type.logo_small
+    - site_settings.site_setting_entity_type.logos
+id: site_setting_entity.logos.field_logo_small
+field_name: field_logo_small
+entity_type: site_setting_entity
+bundle: logos
+label: 'Logo Small'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      logo_small: logo_small
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

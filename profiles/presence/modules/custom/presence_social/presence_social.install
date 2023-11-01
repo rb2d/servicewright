@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Update- Create social_link_group entity.
+ */
+function presence_social_update_8001() {
+  // Check if the table exists first.  If not, then create the entity.
+  if (!db_table_exists('social_link_group')) {
+    \Drupal::entityTypeManager()->clearCachedDefinitions();
+    \Drupal::entityDefinitionUpdateManager()
+      ->installEntityType(\Drupal::entityTypeManager()->getDefinition('social_link_group'));
+  }
+  else {
+    return 'social_link_group entity already exists';
+  }
+}
+
+/**
+ * Update v0.0.9-RC-16 - install social icons in footer config.
+ */
+function presence_social_update_8002() {
+  // Import feature code.
+  $feature_list = [
+    'presence_social',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}

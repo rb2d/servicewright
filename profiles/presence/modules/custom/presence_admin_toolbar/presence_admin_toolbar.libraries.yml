@@ -1,0 +1,10 @@
+presence-admin-toolbar:
+  version: VERSION
+  css:
+    theme:
+      css/presence_admin_toolbar.css: {}
+google-fonts:
+  version: VERSION
+  css:
+    theme:
+      css/font.css: {}

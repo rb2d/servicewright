@@ -1,0 +1,44 @@
+default_button: false
+default_message: false
+default_tab: false
+default_tab_edit: false
+button:
+  blog: true
+  location: true
+  page: true
+  program: true
+  trainer: true
+  event: true
+  homepage: false
+  success_story: true
+  list_page: false
+message:
+  blog: true
+  location: true
+  page: true
+  program: true
+  trainer: true
+  event: true
+  homepage: false
+  success_story: true
+  list_page: false
+tab:
+  blog: true
+  location: true
+  page: true
+  program: true
+  trainer: true
+  event: true
+  homepage: false
+  success_story: true
+  list_page: false
+tab_edit:
+  blog: true
+  location: true
+  page: true
+  program: true
+  trainer: true
+  event: true
+  homepage: false
+  success_story: true
+  list_page: false

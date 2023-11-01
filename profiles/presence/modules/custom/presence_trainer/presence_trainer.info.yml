@@ -1,0 +1,36 @@
+name: 'Presence Trainer'
+description: 'Provides Trainer content type and related configuration. Add a trainer profile that includes : Bio, certifications, photo, video '
+type: module
+core: 8.x
+dependencies:
+  - auto_entityqueue
+  - block
+  - captcha
+  - entityqueue
+  - field
+  - field_layout
+  - file
+  - image
+  - language
+  - layout_builder
+  - layout_discovery
+  - link
+  - media
+  - media_library
+  - menu_ui
+  - node
+  - node_title_help_text
+  - options
+  - path
+  - pathauto
+  - presence_core
+  - scheduler
+  - site_settings
+  - text
+  - user
+  - views
+  - views_zurb_foundation
+  - weight
+package: Presence
+version: 8.x-1.0.16
+core_incompatible: false

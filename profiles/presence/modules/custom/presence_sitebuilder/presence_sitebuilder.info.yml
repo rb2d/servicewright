@@ -1,0 +1,84 @@
+name: 'Presence Sitebuilder'
+type: module
+core: 8.x
+dependencies:
+  - addanother
+  - allowed_formats
+  - block
+  - block_content
+  - captcha
+  - ckeditor
+  - ckwordcount
+  - color
+  - color_field
+  - contact
+  - content_translation
+  - datetime
+  - editor
+  - entity_reference_revisions
+  - features
+  - field
+  - field_group
+  - field_layout
+  - file
+  - filter
+  - fontyourface
+  - geolocation
+  - image
+  - language
+  - layout_builder
+  - layout_builder_modal
+  - layout_discovery
+  - layout_library
+  - layout_plugin_views
+  - link
+  - link_attributes
+  - media
+  - media_library
+  - menu_ui
+  - module_filter
+  - node
+  - node_revision_delete
+  - options
+  - paragraphs
+  - paragraphs_type_permissions
+  - path
+  - pathauto
+  - presence_admin_toolbar
+  - presence_blog
+  - presence_color
+  - presence_core
+  - presence_fonts
+  - presence_homepage
+  - presence_integrations
+  - presence_layout
+  - presence_list_page
+  - presence_menu
+  - presence_performance
+  - presence_redirect
+  - presence_smtp
+  - presence_social
+  - rebuild_cache_access
+  - responsive_background_image
+  - rules
+  - scheduler
+  - search
+  - simple_menu_permissions
+  - site_settings
+  - syslog
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+  - webform
+  - webform_ui
+package: Presence
+install:
+  - addanother
+  - layout_plugin_views
+  - presence_demo_content
+  - redis
+version: 8.x-1.0.20
+description: 'All of the site builder dependencies needed for Presence to work'
+core_incompatible: false

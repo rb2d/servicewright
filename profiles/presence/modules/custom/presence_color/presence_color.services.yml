@@ -1,0 +1,6 @@
+services:
+    presence_color.color:
+        class: Drupal\presence_color\PresenceColorCompiler
+    presence_color.removeAssets:
+      class: Drupal\presence_color\RemoveAssests
+      arguments: []

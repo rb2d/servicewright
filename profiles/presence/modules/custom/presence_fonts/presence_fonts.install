@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the presence_fonts module.
+ */
+
+/**
+ * V0.0.9-RC10 Update font configuration.
+ */
+function presence_fonts_update_8001() {
+  \Drupal::service('presence_fonts.ImportFonts')->import();
+};

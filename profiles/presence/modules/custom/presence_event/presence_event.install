@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file Updates presence_event module.
+ */
+
+/**
+ * V1.0.12 - update allowed formats.
+ */
+function presence_event_update_8001(){
+  $feature_list = [
+    'presence_event',
+  ];
+
+  $assigner = \Drupal::service('features_assigner');
+  $assigner->assignConfigPackages();
+  \Drupal::service('features.manager')->import($feature_list);
+}

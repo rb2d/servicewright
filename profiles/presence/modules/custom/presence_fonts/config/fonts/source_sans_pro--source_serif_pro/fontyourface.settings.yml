@@ -1,0 +1,7 @@
+enabled_fonts:
+  - 'https://www.google.com/webfonts/family?family=Source Sans Pro&subset=latin#700'
+  - 'https://www.google.com/webfonts/family?family=Source Serif Pro&subset=latin#regular'
+load_all_enabled_fonts: 1
+dependencies:
+  module:
+    - fontyourface

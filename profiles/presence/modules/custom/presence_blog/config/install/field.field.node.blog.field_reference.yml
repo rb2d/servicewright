@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reference
+    - node.type.blog
+id: node.blog.field_reference
+field_name: field_reference
+entity_type: node
+bundle: blog
+label: reference
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:site_setting_entity'
+  handler_settings: {  }
+field_type: entity_reference

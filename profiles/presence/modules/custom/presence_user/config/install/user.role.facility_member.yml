@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: facility_member
+label: 'Facility member'
+weight: 7
+is_admin: null
+permissions:
+  - 'use exclude node title'

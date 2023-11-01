@@ -1,0 +1,100 @@
+<?php
+
+/**
+ * @file
+ * This contains custom feature of the module.
+ */
+
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Adds alteration to specific forms.
+ */
+function presence_sitebuilder_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (preg_match('/^taxonomy_term_[a-z_]*_form$/', $form_id)) {
+    $form['description']['widget'][0]['#allowed_formats']['basic_html'] = 'basic_html';
+  }
+  if ($form_id == 'block_content_hero_banner_form' || $form_id == 'block_content_hero_banner_edit_form' || $form_id == 'layout_builder_add_block') {
+    $form['#attached']['library'][] = 'presence_sitebuilder/image_overlay';
+  }
+  if ($form_id == 'media_library_add_form_upload') {
+    unset($form['actions']['save_select']);
+  }
+  if ($form_id == 'layout_builder_add_block' || $form_id == 'layout_builder_update_block') {
+    if ($form_id == 'layout_builder_add_block') {
+      $storage = $form_state->getStorage();
+      $component_config = $storage['layout_builder__component']->get('configuration');
+
+    }
+    elseif ($form_id == 'layout_builder_update_block') {
+      $build_info = $form_state->getBuildInfo();
+      $block = $build_info['callback_object']->getCurrentComponent();
+      $component_config = $block->get('configuration');
+    }
+    $block_id = explode(':', $component_config['id']);
+    $plugin_id = $block_id[0];
+
+    // Inline blocks.
+    if ($plugin_id == 'inline_block') {
+      $block_type = $block_id[1];
+    }
+    if ($block_type == 'hero_banner') {
+      $form['settings']['label']['#description'] = t('Block titles are not displayed by default in Hero banner blocks.');
+      $form['settings']['label']['#title'] = t('Block Title');
+      $form['settings']['label_display']['#default_value'] = FALSE;
+    }
+    if ($block_type == 'mindbody_calendar' || $block_type == 'ext_is_form_block') {
+      $form['settings']['label_display']['#default_value'] = FALSE;
+    }
+  }
+  if ($form_id == 'site_setting_entity_ontraport_integration_form' || $form_id == 'site_setting_entity_ontraport_integration_edit_form') {
+    $form['actions']['submit']['#submit'][] = '_ontraport_integration_settings_goto';
+  }
+  if ($form_id == 'site_setting_entity_favicon_form' || $form_id == 'site_setting_entity_favicon_edit_form') {
+    $form['actions']['submit']['#submit'][] = '_favicon_settings_goto';
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_access().
+ */
+function presence_sitebuilder_user_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($entity->id() == 1) {
+    if ($account->id() != 1) {
+      return AccessResult::forbiddenIf($account->id() != 1);
+    }
+  }
+  return AccessResult::neutral();
+}
+
+/**
+ * Enable presence_ontraport module after form submit.
+ */
+function _ontraport_integration_settings_goto($form, FormStateInterface $form_state) {
+  if ($form_state->getValue('field_enable_ontraport')['value'] == 1) {
+    \Drupal::service('module_installer')->install(['presence_ontraport'], TRUE);
+  }
+}
+
+/**
+ * Enable presence_ontraport module after form submit.
+ */
+function _favicon_settings_goto($form, FormStateInterface $form_state) {
+  if (!empty($form_state->getValue('field_favicon_image')['selection'])) {
+    $favicon_uri_original = $form_state->getFormObject()->getEntity()->field_favicon_image->entity->field_media_image->entity->getFileUri();
+    $style = \Drupal::entityTypeManager()->getStorage('image_style')->load('favicon');
+    $favicon_uri = $style->buildUri($favicon_uri_original);
+    if (!file_exists($favicon_uri)) {
+      $style->createDerivative($favicon_uri_original, $favicon_uri);
+    }
+    $config_factory = \Drupal::configFactory();
+    $config_factory->getEditable('limber.settings')->set('favicon.use_default', 0)->save();
+    $config_factory->getEditable('limber.settings')->set('favicon.path', $favicon_uri)->save();
+
+  }
+}

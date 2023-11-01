@@ -1,0 +1,17 @@
+name: 'Presence User'
+description: 'Provide User related configuration.'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - field_layout
+  - file
+  - image
+  - layout_discovery
+  - path
+  - role_delegation
+  - telephone
+  - user
+package: Presence
+version: 8.x-1.0.19
+core_incompatible: false

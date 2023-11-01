@@ -1,0 +1,44 @@
+# Program schedule routing definition
+program_schedule.settings_tab:
+  route_name: program_schedule.settings
+  title: 'Settings'
+  base_route: program_schedule.settings
+
+entity.program_schedule.canonical:
+  route_name: entity.program_schedule.canonical
+  base_route: entity.program_schedule.canonical
+  title: 'View'
+
+entity.program_schedule.edit_form:
+  route_name: entity.program_schedule.edit_form
+  base_route: entity.program_schedule.canonical
+  title: 'Edit'
+
+entity.program_schedule.delete_form:
+  route_name:  entity.program_schedule.delete_form
+  base_route:  entity.program_schedule.canonical
+  title: Delete
+  weight: 10
+
+# Pricing routing definition
+pricing.settings_tab:
+  route_name: pricing.settings
+  title: 'Settings'
+  base_route: pricing.settings
+
+entity.pricing.canonical:
+  route_name: entity.pricing.canonical
+  base_route: entity.pricing.canonical
+  title: 'View'
+
+entity.pricing.edit_form:
+  route_name: entity.pricing.edit_form
+  base_route: entity.pricing.canonical
+  title: 'Edit'
+
+entity.pricing.delete_form:
+  route_name:  entity.pricing.delete_form
+  base_route:  entity.pricing.canonical
+  title: Delete
+  weight: 10
+

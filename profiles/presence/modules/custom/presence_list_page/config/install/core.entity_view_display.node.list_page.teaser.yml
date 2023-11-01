@@ -1,0 +1,34 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.list_page.body
+    - field.field.node.list_page.field_display_page_title
+    - field.field.node.list_page.layout_builder__layout
+    - node.type.list_page
+  module:
+    - text
+    - user
+id: node.list_page.teaser
+targetEntityType: node
+bundle: list_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_display_page_title: true
+  langcode: true
+  layout_builder__layout: true

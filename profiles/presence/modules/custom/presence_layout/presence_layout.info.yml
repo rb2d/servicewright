@@ -1,0 +1,8 @@
+name: 'Presence Layout'
+type: module
+description: 'Provides SWP XY grid system layouts'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - drupal:layout_discovery
+  - drupal:xy_grid_layouts

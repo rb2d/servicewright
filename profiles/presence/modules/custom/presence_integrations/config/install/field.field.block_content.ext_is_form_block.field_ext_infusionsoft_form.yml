@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.ext_is_form_block
+    - field.storage.block_content.field_ext_infusionsoft_form
+  module:
+    - allowed_formats
+    - text
+third_party_settings:
+  allowed_formats:
+    infusionsoft_filter: infusionsoft_filter
+    activecampaign_script: '0'
+    acuity_scheduler_script: '0'
+    basic_html: '0'
+    cta_textarea: '0'
+    mindbody_script: '0'
+    ontraport_script: '0'
+    restricted_html: '0'
+    uplaunch_script: '0'
+    full_html: '0'
+    plain_text: '0'
+id: block_content.ext_is_form_block.field_ext_infusionsoft_form
+field_name: field_ext_infusionsoft_form
+entity_type: block_content
+bundle: ext_is_form_block
+label: 'InfusionSoft form code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
